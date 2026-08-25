@@ -1,0 +1,25 @@
+[project]
+name = "pokegraph-ingest"
+version = "0.1.0"
+description = "PokéAPI to Neo4j ingestion pipeline for PokéGraph"
+requires-python = ">=3.10"
+dependencies = [
+    "aiohttp>=3.9,<4",
+    "neo4j>=5.28,<7",
+    "python-dotenv>=1.0,<2",
+    "pokelance",
+]
+
+[tool.uv.sources]
+pokelance = { path = "vendor/PokeLance" }
+
+[project.scripts]
+pokegraph-ingest = "pokegraph_ingest.ingest:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

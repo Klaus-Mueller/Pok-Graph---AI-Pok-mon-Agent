@@ -15,6 +15,7 @@ pokelance = { path = "vendor/PokeLance" }
 
 [project.scripts]
 pokegraph-ingest = "pokegraph_ingest.ingest:main"
+pokegraph-schema = "pokegraph_ingest.schema:main"
 
 [build-system]
 requires = ["setuptools>=69"]

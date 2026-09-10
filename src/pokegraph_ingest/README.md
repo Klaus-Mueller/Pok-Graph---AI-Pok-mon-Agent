@@ -119,7 +119,7 @@ No LabelScan on identity keys. No additional ingest indexes warranted from this 
 
 ### Agent read indexes (deferred)
 
-Add indexes only after the agent exists and real Cypher shapes are known:
+Catalog `EXPLAIN` plans are recorded in [`queries/examples/plans.md`](../../queries/examples/plans.md). Identity seeks already use uniqueness constraints; name lookup still LabelScans. Add indexes only after the agent exists and those shapes prove expensive:
 
 1. Collect top queries + `PROFILE` / DB-hit metrics.
 2. Index exact-match filters and frequent traversal endpoints that still LabelScan.
@@ -216,10 +216,16 @@ RETURN m.power, m.type, m.damage_class, m.contest_type,
        m.flinch_chance, m.short_effect
 ```
 
+## Query catalog
+
+Reusable parameterized Cypher (KLA-120) lives in [`queries/`](../../queries/). Trainer teams, Red, and progression stay out of that catalog until curated `Trainer` / `Progression` data exists.
+
 ## Tests
 
 ```bash
 PYTHONPATH=src python -m unittest tests.test_learnsets tests.test_moves -v
+PYTHONPATH=src python -m unittest tests.integration.test_queries -v
+POKEGRAPH_LIVE_QUERY_TESTS=1 PYTHONPATH=src python -m unittest tests.integration.live_test_queries -v
 ```
 
 ## Package layout

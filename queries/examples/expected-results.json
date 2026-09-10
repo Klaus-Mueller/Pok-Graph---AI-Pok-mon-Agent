@@ -1,0 +1,1572 @@
+{
+  "fingerprint": {
+    "encounter_count": 111515,
+    "game_version_count": 41,
+    "latest_learnset_retrieved_at": "2026-08-30T12:04:57.927956+00:00",
+    "learnset_entry_count": 638321,
+    "pokemon_count": 1351,
+    "version_group_count": 28
+  },
+  "queries": {
+    "discovery/dataset_fingerprint.cypher": {
+      "parameters": {},
+      "row_count": 1,
+      "rows": [
+        {
+          "encounter_count": 111515,
+          "game_version_count": 41,
+          "latest_learnset_retrieved_at": "2026-08-30T12:04:57.927956+00:00",
+          "learnset_entry_count": 638321,
+          "pokemon_count": 1351,
+          "version_group_count": 28
+        }
+      ]
+    },
+    "discovery/find_pokemon_by_name.cypher": {
+      "parameters": {
+        "limit": 10,
+        "name": "pikachu",
+        "skip": 0
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "match_rank": 0,
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10080,
+          "pokemon_name": "pikachu-rock-star",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10081,
+          "pokemon_name": "pikachu-belle",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10082,
+          "pokemon_name": "pikachu-pop-star",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10083,
+          "pokemon_name": "pikachu-phd",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10084,
+          "pokemon_name": "pikachu-libre",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10085,
+          "pokemon_name": "pikachu-cosplay",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10094,
+          "pokemon_name": "pikachu-original-cap",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10095,
+          "pokemon_name": "pikachu-hoenn-cap",
+          "species_id": 25
+        },
+        {
+          "match_rank": 1,
+          "pokemon_id": 10096,
+          "pokemon_name": "pikachu-sinnoh-cap",
+          "species_id": 25
+        }
+      ]
+    },
+    "discovery/list_version_groups_with_data.cypher": {
+      "parameters": {
+        "limit": 10,
+        "skip": 0
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "learnset_entry_count": 4128,
+          "region_ids": [
+            1
+          ],
+          "version_group_id": 1,
+          "version_group_name": "red-blue"
+        },
+        {
+          "learnset_entry_count": 4152,
+          "region_ids": [
+            1
+          ],
+          "version_group_id": 2,
+          "version_group_name": "yellow"
+        },
+        {
+          "learnset_entry_count": 9056,
+          "region_ids": [
+            1,
+            2
+          ],
+          "version_group_id": 3,
+          "version_group_name": "gold-silver"
+        },
+        {
+          "learnset_entry_count": 9286,
+          "region_ids": [
+            1,
+            2
+          ],
+          "version_group_id": 4,
+          "version_group_name": "crystal"
+        },
+        {
+          "learnset_entry_count": 13955,
+          "region_ids": [
+            3
+          ],
+          "version_group_id": 5,
+          "version_group_name": "ruby-sapphire"
+        },
+        {
+          "learnset_entry_count": 19304,
+          "region_ids": [
+            3
+          ],
+          "version_group_id": 6,
+          "version_group_name": "emerald"
+        },
+        {
+          "learnset_entry_count": 16486,
+          "region_ids": [
+            1
+          ],
+          "version_group_id": 7,
+          "version_group_name": "firered-leafgreen"
+        },
+        {
+          "learnset_entry_count": 26301,
+          "region_ids": [
+            4
+          ],
+          "version_group_id": 8,
+          "version_group_name": "diamond-pearl"
+        },
+        {
+          "learnset_entry_count": 30897,
+          "region_ids": [
+            4
+          ],
+          "version_group_id": 9,
+          "version_group_name": "platinum"
+        },
+        {
+          "learnset_entry_count": 32216,
+          "region_ids": [
+            1,
+            2
+          ],
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        }
+      ]
+    },
+    "discovery/list_versions_with_data.cypher": {
+      "parameters": {
+        "limit": 10,
+        "skip": 0
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "encounter_count": 881,
+          "version_group_id": 1,
+          "version_group_name": "red-blue",
+          "version_id": 1,
+          "version_name": "red"
+        },
+        {
+          "encounter_count": 881,
+          "version_group_id": 1,
+          "version_group_name": "red-blue",
+          "version_id": 2,
+          "version_name": "blue"
+        },
+        {
+          "encounter_count": 855,
+          "version_group_id": 2,
+          "version_group_name": "yellow",
+          "version_id": 3,
+          "version_name": "yellow"
+        },
+        {
+          "encounter_count": 2714,
+          "version_group_id": 3,
+          "version_group_name": "gold-silver",
+          "version_id": 4,
+          "version_name": "gold"
+        },
+        {
+          "encounter_count": 2661,
+          "version_group_id": 3,
+          "version_group_name": "gold-silver",
+          "version_id": 5,
+          "version_name": "silver"
+        },
+        {
+          "encounter_count": 3053,
+          "version_group_id": 4,
+          "version_group_name": "crystal",
+          "version_id": 6,
+          "version_name": "crystal"
+        },
+        {
+          "encounter_count": 1482,
+          "version_group_id": 5,
+          "version_group_name": "ruby-sapphire",
+          "version_id": 7,
+          "version_name": "ruby"
+        },
+        {
+          "encounter_count": 1482,
+          "version_group_id": 5,
+          "version_group_name": "ruby-sapphire",
+          "version_id": 8,
+          "version_name": "sapphire"
+        },
+        {
+          "encounter_count": 1592,
+          "version_group_id": 6,
+          "version_group_name": "emerald",
+          "version_id": 9,
+          "version_name": "emerald"
+        },
+        {
+          "encounter_count": 2041,
+          "version_group_id": 7,
+          "version_group_name": "firered-leafgreen",
+          "version_id": 10,
+          "version_name": "firered"
+        }
+      ]
+    },
+    "discovery/resolve_version_group.cypher": {
+      "parameters": {
+        "version_group_id": 10,
+        "version_id": 15
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver",
+          "version_id": 15,
+          "version_name": "heartgold"
+        }
+      ]
+    },
+    "encounters/compare_versions.cypher": {
+      "parameters": {
+        "limit": 10,
+        "location_area_id": 184,
+        "skip": 0,
+        "version_id_a": 15,
+        "version_id_b": 16
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "encounter_ids_a": [
+            "72:184:15:2:10:10:10:",
+            "72:184:15:2:10:10:5:",
+            "72:184:15:3:20:20:30:",
+            "72:184:15:5:15:25:60:",
+            "72:184:15:5:10:20:30:"
+          ],
+          "encounter_ids_b": [
+            "72:184:16:2:10:10:10:",
+            "72:184:16:2:10:10:5:",
+            "72:184:16:3:20:20:30:",
+            "72:184:16:5:15:25:60:",
+            "72:184:16:5:10:20:30:"
+          ],
+          "membership": "both",
+          "pokemon_id": 72,
+          "pokemon_name": "tentacool"
+        },
+        {
+          "encounter_ids_a": [
+            "73:184:15:4:40:40:15:",
+            "73:184:15:4:40:40:5:",
+            "73:184:15:5:15:25:5:",
+            "73:184:15:5:15:25:4:",
+            "73:184:15:5:15:25:1:"
+          ],
+          "encounter_ids_b": [
+            "73:184:16:4:40:40:15:",
+            "73:184:16:4:40:40:5:",
+            "73:184:16:5:15:25:5:",
+            "73:184:16:5:15:25:4:",
+            "73:184:16:5:15:25:1:"
+          ],
+          "membership": "both",
+          "pokemon_id": 73,
+          "pokemon_name": "tentacruel"
+        },
+        {
+          "encounter_ids_a": [
+            "90:184:15:3:20:20:10:",
+            "90:184:15:4:40:40:30:"
+          ],
+          "encounter_ids_b": [
+            "90:184:16:3:20:20:10:",
+            "90:184:16:4:40:40:30:"
+          ],
+          "membership": "both",
+          "pokemon_id": 90,
+          "pokemon_name": "shellder"
+        },
+        {
+          "encounter_ids_a": [
+            "102:184:15:7:2:3:10:headbutt-tree-common",
+            "102:184:15:7:4:5:10:headbutt-tree-rare",
+            "102:184:15:7:2:3:5:headbutt-tree-common",
+            "102:184:15:7:4:5:5:headbutt-tree-rare"
+          ],
+          "encounter_ids_b": [
+            "102:184:16:7:2:3:10:headbutt-tree-common",
+            "102:184:16:7:4:5:10:headbutt-tree-rare",
+            "102:184:16:7:2:3:5:headbutt-tree-common",
+            "102:184:16:7:4:5:5:headbutt-tree-rare"
+          ],
+          "membership": "both",
+          "pokemon_id": 102,
+          "pokemon_name": "exeggcute"
+        },
+        {
+          "encounter_ids_a": [
+            "129:184:15:2:10:10:40:",
+            "129:184:15:2:10:10:30:",
+            "129:184:15:2:10:10:15:",
+            "129:184:15:3:20:20:40:"
+          ],
+          "encounter_ids_b": [
+            "129:184:16:2:10:10:40:",
+            "129:184:16:2:10:10:30:",
+            "129:184:16:2:10:10:15:",
+            "129:184:16:3:20:20:40:"
+          ],
+          "membership": "both",
+          "pokemon_id": 129,
+          "pokemon_name": "magikarp"
+        },
+        {
+          "encounter_ids_a": [
+            "152:184:15:18:5:5:100:"
+          ],
+          "encounter_ids_b": [
+            "152:184:16:18:5:5:100:"
+          ],
+          "membership": "both",
+          "pokemon_id": 152,
+          "pokemon_name": "chikorita"
+        },
+        {
+          "encounter_ids_a": [
+            "155:184:15:18:5:5:100:"
+          ],
+          "encounter_ids_b": [
+            "155:184:16:18:5:5:100:"
+          ],
+          "membership": "both",
+          "pokemon_id": 155,
+          "pokemon_name": "cyndaquil"
+        },
+        {
+          "encounter_ids_a": [
+            "158:184:15:18:5:5:100:"
+          ],
+          "encounter_ids_b": [
+            "158:184:16:18:5:5:100:"
+          ],
+          "membership": "both",
+          "pokemon_id": 158,
+          "pokemon_name": "totodile"
+        },
+        {
+          "encounter_ids_a": [
+            "163:184:15:7:2:3:50:headbutt-tree-common",
+            "163:184:15:7:4:5:50:headbutt-tree-rare"
+          ],
+          "encounter_ids_b": [
+            "163:184:16:7:2:3:50:headbutt-tree-common",
+            "163:184:16:7:4:5:50:headbutt-tree-rare"
+          ],
+          "membership": "both",
+          "pokemon_id": 163,
+          "pokemon_name": "hoothoot"
+        },
+        {
+          "encounter_ids_a": [
+            "170:184:15:3:20:20:15:",
+            "170:184:15:3:20:20:5:",
+            "170:184:15:4:40:40:40:"
+          ],
+          "encounter_ids_b": [
+            "170:184:16:3:20:20:15:",
+            "170:184:16:3:20:20:5:",
+            "170:184:16:4:40:40:40:"
+          ],
+          "membership": "both",
+          "pokemon_id": 170,
+          "pokemon_name": "chinchou"
+        }
+      ]
+    },
+    "encounters/locations_of_pokemon.cypher": {
+      "parameters": {
+        "limit": 10,
+        "max_level": null,
+        "method_id": null,
+        "min_level": null,
+        "pokemon_id": 25,
+        "skip": 0,
+        "version_id": 15
+      },
+      "row_count": 5,
+      "rows": [
+        {
+          "chance": 1,
+          "condition_values": [],
+          "encounter_id": "25:321:15:1:4:4:1:",
+          "location_area_id": 321,
+          "location_area_name": "viridian-forest-area",
+          "location_id": 155,
+          "location_name": "viridian-forest",
+          "max_level": 4,
+          "method_id": 1,
+          "method_name": "walk",
+          "min_level": 4,
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "region_id": 1,
+          "region_name": "kanto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 4,
+          "condition_values": [],
+          "encounter_id": "25:321:15:1:4:4:4:",
+          "location_area_id": 321,
+          "location_area_name": "viridian-forest-area",
+          "location_id": 155,
+          "location_name": "viridian-forest",
+          "max_level": 4,
+          "method_id": 1,
+          "method_name": "walk",
+          "min_level": 4,
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "region_id": 1,
+          "region_name": "kanto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 1,
+          "condition_values": [
+            "time-day"
+          ],
+          "encounter_id": "25:321:15:1:7:7:1:time-day",
+          "location_area_id": 321,
+          "location_area_name": "viridian-forest-area",
+          "location_id": 155,
+          "location_name": "viridian-forest",
+          "max_level": 7,
+          "method_id": 1,
+          "method_name": "walk",
+          "min_level": 7,
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "region_id": 1,
+          "region_name": "kanto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 1,
+          "condition_values": [
+            "time-morning"
+          ],
+          "encounter_id": "25:321:15:1:7:7:1:time-morning",
+          "location_area_id": 321,
+          "location_area_name": "viridian-forest-area",
+          "location_id": 155,
+          "location_name": "viridian-forest",
+          "max_level": 7,
+          "method_id": 1,
+          "method_name": "walk",
+          "min_level": 7,
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "region_id": 1,
+          "region_name": "kanto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 100,
+          "condition_values": [
+            "trade-pikachu"
+          ],
+          "encounter_id": "25:1664:15:36:2:100:100:trade-pikachu",
+          "location_area_id": 1664,
+          "location_area_name": "saffron-city-magnet-train-station",
+          "location_id": 234,
+          "location_name": "saffron-city",
+          "max_level": 100,
+          "method_id": 36,
+          "method_name": "npc-trade",
+          "min_level": 2,
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "region_id": 1,
+          "region_name": "kanto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        }
+      ]
+    },
+    "encounters/pokemon_in_area.cypher": {
+      "parameters": {
+        "limit": 10,
+        "location_area_id": 184,
+        "max_level": 20,
+        "method_id": null,
+        "min_level": 10,
+        "skip": 0,
+        "version_id": 15
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "chance": 10,
+          "condition_values": [],
+          "encounter_id": "72:184:15:2:10:10:10:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 10,
+          "method_id": 2,
+          "method_name": "old-rod",
+          "min_level": 10,
+          "pokemon_id": 72,
+          "pokemon_name": "tentacool",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 5,
+          "condition_values": [],
+          "encounter_id": "72:184:15:2:10:10:5:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 10,
+          "method_id": 2,
+          "method_name": "old-rod",
+          "min_level": 10,
+          "pokemon_id": 72,
+          "pokemon_name": "tentacool",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 30,
+          "condition_values": [],
+          "encounter_id": "72:184:15:3:20:20:30:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 20,
+          "method_id": 3,
+          "method_name": "good-rod",
+          "min_level": 20,
+          "pokemon_id": 72,
+          "pokemon_name": "tentacool",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 30,
+          "condition_values": [],
+          "encounter_id": "72:184:15:5:10:20:30:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 20,
+          "method_id": 5,
+          "method_name": "surf",
+          "min_level": 10,
+          "pokemon_id": 72,
+          "pokemon_name": "tentacool",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 60,
+          "condition_values": [],
+          "encounter_id": "72:184:15:5:15:25:60:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 25,
+          "method_id": 5,
+          "method_name": "surf",
+          "min_level": 15,
+          "pokemon_id": 72,
+          "pokemon_name": "tentacool",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 1,
+          "condition_values": [],
+          "encounter_id": "73:184:15:5:15:25:1:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 25,
+          "method_id": 5,
+          "method_name": "surf",
+          "min_level": 15,
+          "pokemon_id": 73,
+          "pokemon_name": "tentacruel",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 4,
+          "condition_values": [],
+          "encounter_id": "73:184:15:5:15:25:4:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 25,
+          "method_id": 5,
+          "method_name": "surf",
+          "min_level": 15,
+          "pokemon_id": 73,
+          "pokemon_name": "tentacruel",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 5,
+          "condition_values": [],
+          "encounter_id": "73:184:15:5:15:25:5:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 25,
+          "method_id": 5,
+          "method_name": "surf",
+          "min_level": 15,
+          "pokemon_id": 73,
+          "pokemon_name": "tentacruel",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 10,
+          "condition_values": [],
+          "encounter_id": "90:184:15:3:20:20:10:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 20,
+          "method_id": 3,
+          "method_name": "good-rod",
+          "min_level": 20,
+          "pokemon_id": 90,
+          "pokemon_name": "shellder",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        },
+        {
+          "chance": 15,
+          "condition_values": [],
+          "encounter_id": "129:184:15:2:10:10:15:",
+          "location_area_id": 184,
+          "location_area_name": "new-bark-town-area",
+          "location_id": 84,
+          "location_name": "new-bark-town",
+          "max_level": 10,
+          "method_id": 2,
+          "method_name": "old-rod",
+          "min_level": 10,
+          "pokemon_id": 129,
+          "pokemon_name": "magikarp",
+          "region_id": 2,
+          "region_name": "johto",
+          "version_id": 15,
+          "version_name": "heartgold"
+        }
+      ]
+    },
+    "evolutions/evolution_chain.cypher": {
+      "parameters": {
+        "limit": 10,
+        "skip": 0,
+        "species_id": 25
+      },
+      "row_count": 5,
+      "rows": [
+        {
+          "evolution_chain_id": 10,
+          "evolves_to_id": "25:26:use-item:red-blue:thunder-stone::",
+          "from_species_id": 25,
+          "from_species_name": "pikachu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": 83,
+          "item_name": "thunder-stone",
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": null,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "queried_species_id": 25,
+          "region": null,
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 26,
+          "to_species_name": "raichu",
+          "trade_species": null,
+          "trigger": "use-item",
+          "turn_upside_down": false,
+          "version_group": "red-blue"
+        },
+        {
+          "evolution_chain_id": 10,
+          "evolves_to_id": "25:26:use-item:sun-moon:thunder-stone::alola",
+          "from_species_id": 25,
+          "from_species_name": "pikachu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": 83,
+          "item_name": "thunder-stone",
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": null,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "queried_species_id": 25,
+          "region": "alola",
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 26,
+          "to_species_name": "raichu",
+          "trade_species": null,
+          "trigger": "use-item",
+          "turn_upside_down": false,
+          "version_group": "sun-moon"
+        },
+        {
+          "evolution_chain_id": 10,
+          "evolves_to_id": null,
+          "from_species_id": 25,
+          "from_species_name": "pikachu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": 83,
+          "item_name": "thunder-stone",
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": null,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "queried_species_id": 25,
+          "region": "alola",
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 26,
+          "to_species_name": "raichu",
+          "trade_species": null,
+          "trigger": "use-item",
+          "turn_upside_down": false,
+          "version_group": "sun-moon"
+        },
+        {
+          "evolution_chain_id": 10,
+          "evolves_to_id": "172:25:level-up:red-blue:::",
+          "from_species_id": 172,
+          "from_species_name": "pichu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": null,
+          "item_name": null,
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": 220,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "queried_species_id": 25,
+          "region": null,
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 25,
+          "to_species_name": "pikachu",
+          "trade_species": null,
+          "trigger": "level-up",
+          "turn_upside_down": false,
+          "version_group": "red-blue"
+        },
+        {
+          "evolution_chain_id": 10,
+          "evolves_to_id": null,
+          "from_species_id": 172,
+          "from_species_name": "pichu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": null,
+          "item_name": null,
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": 220,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "queried_species_id": 25,
+          "region": null,
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 25,
+          "to_species_name": "pikachu",
+          "trade_species": null,
+          "trigger": "level-up",
+          "turn_upside_down": false,
+          "version_group": "red-blue"
+        }
+      ]
+    },
+    "evolutions/evolutions_from_species.cypher": {
+      "parameters": {
+        "limit": 10,
+        "skip": 0,
+        "species_id": 25
+      },
+      "row_count": 3,
+      "rows": [
+        {
+          "evolves_to_id": "25:26:use-item:red-blue:thunder-stone::",
+          "from_species_id": 25,
+          "from_species_name": "pikachu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": 83,
+          "item_name": "thunder-stone",
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": null,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "region": null,
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 26,
+          "to_species_name": "raichu",
+          "trade_species": null,
+          "trigger": "use-item",
+          "turn_upside_down": false,
+          "version_group": "red-blue"
+        },
+        {
+          "evolves_to_id": "25:26:use-item:sun-moon:thunder-stone::alola",
+          "from_species_id": 25,
+          "from_species_name": "pikachu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": 83,
+          "item_name": "thunder-stone",
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": null,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "region": "alola",
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 26,
+          "to_species_name": "raichu",
+          "trade_species": null,
+          "trigger": "use-item",
+          "turn_upside_down": false,
+          "version_group": "sun-moon"
+        },
+        {
+          "evolves_to_id": null,
+          "from_species_id": 25,
+          "from_species_name": "pikachu",
+          "gender": null,
+          "held_item": null,
+          "is_default": true,
+          "item_id": 83,
+          "item_name": "thunder-stone",
+          "known_move": null,
+          "known_move_type": null,
+          "location": null,
+          "min_affection": null,
+          "min_beauty": null,
+          "min_happiness": null,
+          "min_level": null,
+          "needs_overworld_rain": false,
+          "party_species": null,
+          "region": "alola",
+          "relative_physical_stats": null,
+          "time_of_day": null,
+          "to_species_id": 26,
+          "to_species_name": "raichu",
+          "trade_species": null,
+          "trigger": "use-item",
+          "turn_upside_down": false,
+          "version_group": "sun-moon"
+        }
+      ]
+    },
+    "learnsets/learnset_for_pokemon.cypher": {
+      "parameters": {
+        "learn_method_id": null,
+        "limit": 10,
+        "pokemon_id": 25,
+        "skip": 0,
+        "version_group_id": 10
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": 2,
+          "learnset_entry_id": "25:45:10:1:1:2",
+          "level_learned_at": 1,
+          "move_id": 45,
+          "move_name": "growl",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": 1,
+          "learnset_entry_id": "25:84:10:1:1:1",
+          "level_learned_at": 1,
+          "move_id": 84,
+          "move_name": "thunder-shock",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:39:10:1:5:",
+          "level_learned_at": 5,
+          "move_id": 39,
+          "move_name": "tail-whip",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:86:10:1:10:",
+          "level_learned_at": 10,
+          "move_id": 86,
+          "move_name": "thunder-wave",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:98:10:1:13:",
+          "level_learned_at": 13,
+          "move_id": 98,
+          "move_name": "quick-attack",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:104:10:1:18:",
+          "level_learned_at": 18,
+          "move_id": 104,
+          "move_name": "double-team",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:21:10:1:21:",
+          "level_learned_at": 21,
+          "move_id": 21,
+          "move_name": "slam",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:85:10:1:26:",
+          "level_learned_at": 26,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:364:10:1:29:",
+          "level_learned_at": 29,
+          "move_id": 364,
+          "move_name": "feint",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:97:10:1:34:",
+          "level_learned_at": 34,
+          "move_id": 97,
+          "move_name": "agility",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        }
+      ]
+    },
+    "learnsets/who_learns_move.cypher": {
+      "parameters": {
+        "learn_method_id": null,
+        "limit": 10,
+        "move_id": 85,
+        "skip": 0,
+        "version_group_id": 10
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": 4,
+          "learnset_entry_id": "26:85:10:1:1:4",
+          "level_learned_at": 1,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 26,
+          "pokemon_name": "raichu",
+          "retrieved_at": "2026-08-29T20:31:21.090179+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/26/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "25:85:10:1:26:",
+          "level_learned_at": 26,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "239:85:10:1:37:",
+          "level_learned_at": 37,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 239,
+          "pokemon_name": "elekid",
+          "retrieved_at": "2026-08-29T21:03:57.639437+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/239/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "125:85:10:1:43:",
+          "level_learned_at": 43,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 125,
+          "pokemon_name": "electabuzz",
+          "retrieved_at": "2026-08-29T20:53:22.120690+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/125/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learn_order": null,
+          "learnset_entry_id": "466:85:10:1:43:",
+          "level_learned_at": 43,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 466,
+          "pokemon_name": "electivire",
+          "retrieved_at": "2026-08-29T21:18:21.565267+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/466/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 4,
+          "learn_method_name": "machine",
+          "learn_order": null,
+          "learnset_entry_id": "19:85:10:4:0:",
+          "level_learned_at": 0,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 19,
+          "pokemon_name": "rattata",
+          "retrieved_at": "2026-08-29T20:28:07.441678+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/19/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 4,
+          "learn_method_name": "machine",
+          "learn_order": null,
+          "learnset_entry_id": "20:85:10:4:0:",
+          "level_learned_at": 0,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 20,
+          "pokemon_name": "raticate",
+          "retrieved_at": "2026-08-29T20:28:56.180073+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/20/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 4,
+          "learn_method_name": "machine",
+          "learn_order": null,
+          "learnset_entry_id": "25:85:10:4:0:",
+          "level_learned_at": 0,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu",
+          "retrieved_at": "2026-08-29T20:30:41.770838+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/25/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 4,
+          "learn_method_name": "machine",
+          "learn_order": null,
+          "learnset_entry_id": "26:85:10:4:0:",
+          "level_learned_at": 0,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 26,
+          "pokemon_name": "raichu",
+          "retrieved_at": "2026-08-29T20:31:21.090179+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/26/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        },
+        {
+          "learn_method_id": 4,
+          "learn_method_name": "machine",
+          "learn_order": null,
+          "learnset_entry_id": "29:85:10:4:0:",
+          "level_learned_at": 0,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 29,
+          "pokemon_name": "nidoran-f",
+          "retrieved_at": "2026-08-29T20:32:16.635898+00:00",
+          "source_url": "https://pokeapi.co/api/v2/pokemon/29/",
+          "version_group_id": 10,
+          "version_group_name": "heartgold-soulsilver"
+        }
+      ]
+    },
+    "matchups/offensive_coverage_by_learnset.cypher": {
+      "parameters": {
+        "defender_pokemon_id": 72,
+        "learn_method_id": null,
+        "limit": 10,
+        "pokemon_id": 25,
+        "skip": 0,
+        "version_group_id": 10
+      },
+      "row_count": 10,
+      "rows": [
+        {
+          "advantage": false,
+          "attacker_type_id": 1,
+          "attacker_type_name": "normal",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "neutral",
+          "factor": 1.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:45:10:1:1:2",
+          "level_learned_at": 1,
+          "move_id": 45,
+          "move_name": "growl",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": true,
+          "attacker_type_id": 13,
+          "attacker_type_name": "electric",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "weak",
+          "factor": 2.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:84:10:1:1:1",
+          "level_learned_at": 1,
+          "move_id": 84,
+          "move_name": "thunder-shock",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": false,
+          "attacker_type_id": 1,
+          "attacker_type_name": "normal",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "neutral",
+          "factor": 1.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:39:10:1:5:",
+          "level_learned_at": 5,
+          "move_id": 39,
+          "move_name": "tail-whip",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": true,
+          "attacker_type_id": 13,
+          "attacker_type_name": "electric",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "weak",
+          "factor": 2.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:86:10:1:10:",
+          "level_learned_at": 10,
+          "move_id": 86,
+          "move_name": "thunder-wave",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": false,
+          "attacker_type_id": 1,
+          "attacker_type_name": "normal",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "neutral",
+          "factor": 1.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:98:10:1:13:",
+          "level_learned_at": 13,
+          "move_id": 98,
+          "move_name": "quick-attack",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": false,
+          "attacker_type_id": 1,
+          "attacker_type_name": "normal",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "neutral",
+          "factor": 1.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:104:10:1:18:",
+          "level_learned_at": 18,
+          "move_id": 104,
+          "move_name": "double-team",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": false,
+          "attacker_type_id": 1,
+          "attacker_type_name": "normal",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "neutral",
+          "factor": 1.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:21:10:1:21:",
+          "level_learned_at": 21,
+          "move_id": 21,
+          "move_name": "slam",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": true,
+          "attacker_type_id": 13,
+          "attacker_type_name": "electric",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "weak",
+          "factor": 2.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:85:10:1:26:",
+          "level_learned_at": 26,
+          "move_id": 85,
+          "move_name": "thunderbolt",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": false,
+          "attacker_type_id": 1,
+          "attacker_type_name": "normal",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "neutral",
+          "factor": 1.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:364:10:1:29:",
+          "level_learned_at": 29,
+          "move_id": 364,
+          "move_name": "feint",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        },
+        {
+          "advantage": true,
+          "attacker_type_id": 14,
+          "attacker_type_name": "psychic",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "weak",
+          "factor": 2.0,
+          "learn_method_id": 1,
+          "learn_method_name": "level-up",
+          "learnset_entry_id": "25:97:10:1:34:",
+          "level_learned_at": 34,
+          "move_id": 97,
+          "move_name": "agility",
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        }
+      ]
+    },
+    "matchups/offensive_coverage_by_types.cypher": {
+      "parameters": {
+        "defender_pokemon_id": 72,
+        "limit": 10,
+        "pokemon_id": 25,
+        "skip": 0
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "advantage": true,
+          "attacker_type_id": 13,
+          "attacker_type_name": "electric",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "weak",
+          "factor": 2.0,
+          "pokemon_id": 25,
+          "pokemon_name": "pikachu"
+        }
+      ]
+    },
+    "matchups/type_effectiveness.cypher": {
+      "parameters": {
+        "attacker_type_id": 13,
+        "defender_pokemon_id": 72
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "attacker_type_id": 13,
+          "attacker_type_name": "electric",
+          "data_complete": true,
+          "defender_pokemon_id": 72,
+          "defender_pokemon_name": "tentacool",
+          "effectiveness": "weak",
+          "factor": 2.0
+        }
+      ]
+    }
+  },
+  "recorded_at": "2026-09-10T14:16:07.643142+00:00"
+}

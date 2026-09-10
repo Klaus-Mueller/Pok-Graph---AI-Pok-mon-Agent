@@ -14,7 +14,7 @@ Fetches Pokémon from [PokéAPI](https://pokeapi.co/) via [PokeLance](https://gi
 | `PokemonSpecies` | `id` | Legendary/mythical, generation |
 | `Type` | `id` | Plus `DAMAGE_TO` edges for counters |
 | `Ability` | `id` | Stub from Pokémon abilities |
-| `Move` | `id` | Enriched from `/move/{id}`: power, accuracy, pp, priority, type, damage_class |
+| `Move` | `id` | Enriched from `/move/{id}`: power/accuracy/pp/priority, type, damage_class, English effect text, structured meta (flinch/ailment/drain/…), contest fields |
 | `GameVersion` | `id` | From encounter version details |
 | `VersionGroup` | `id` | Hierarchy from versions |
 | `Region` | `id` | From locations / version groups |
@@ -208,6 +208,12 @@ ORDER BY vg.name, lm.name, e.level_learned_at;
 MATCH (m:Move {name: "thunderbolt"})
 OPTIONAL MATCH (m)-[:HAS_TYPE]->(t:Type)
 RETURN m.power, m.accuracy, m.pp, m.priority, m.type, m.damage_class, t.name AS type_node
+```
+
+```cypher
+MATCH (m:Move {name: "headbutt"})
+RETURN m.power, m.type, m.damage_class, m.contest_type,
+       m.flinch_chance, m.short_effect
 ```
 
 ## Tests

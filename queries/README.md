@@ -2,7 +2,7 @@
 
 Reusable, parameterized Cypher queries for the ingested PokéAPI graph. Files are API-independent and can be run in Neo4j Browser or `neo4j-cli query`. HeartGold/SoulSilver appear only in [`examples/`](examples/) and integration tests — never in reusable `.cypher` bodies.
 
-The catalog is intended for a future API and agent. It answers questions the current graph can support with stable columns and evidence IDs.
+The catalog answers questions the current graph can support with stable columns and evidence IDs. Call it from `PokeGraphClient` in [`src/pokegraph/`](../src/pokegraph/), or browse and Try it out in the OpenAPI UI (`python -m pokegraph_api`, then [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)).
 
 ## Parameter domains
 
@@ -66,7 +66,7 @@ Rows always include `learnset_entry_id` and walk `LearnsetEntry-[:IN_VERSION_GRO
 
 `level_learned_at = 0` does **not** mean the move is available at the start of the game. That value is stored for machine / tutor / egg (and similar) methods. Filter on `learn_method_id` / `learn_method_name`.
 
-`LearnsetEntry` carries `source_url` and `retrieved_at`. Encounter, evolution, and type rows do not; this catalog does not invent provenance for them.
+`LearnsetEntry` carries `source_url`, `source_version`, and `retrieved_at`. Encounter, evolution, and type evidence expose the same columns when present. Older rows stay null until they are re-ingested; the catalog does not invent a collection date.
 
 ### Evolutions
 
@@ -108,13 +108,13 @@ Do not stub these queries against empty labels.
 Fixture integration tests use reserved negative IDs and roll back:
 
 ```bash
-PYTHONPATH=src python -m unittest tests.integration.test_queries -v
+PYTHONPATH=src python -m unittest tests.integration.test_queries tests.integration.test_client -v
 ```
 
 Read-only live checks (requires a populated database):
 
 ```bash
-POKEGRAPH_LIVE_QUERY_TESTS=1 PYTHONPATH=src python -m unittest tests.integration.live_test_queries -v
+POKEGRAPH_LIVE_QUERY_TESTS=1 PYTHONPATH=src python -m unittest tests.integration.live_test_queries tests.integration.live_test_client -v
 ```
 
 Refresh example artifacts:

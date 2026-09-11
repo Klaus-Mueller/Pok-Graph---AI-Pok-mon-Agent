@@ -1,13 +1,21 @@
 [project]
-name = "pokegraph-ingest"
+name = "pokegraph"
 version = "0.1.0"
-description = "PokéAPI to Neo4j ingestion pipeline for PokéGraph"
+description = "PokéGraph query client and PokéAPI ingestion pipeline"
 requires-python = ">=3.10"
 dependencies = [
-    "aiohttp>=3.9,<4",
     "neo4j>=5.28,<7",
     "python-dotenv>=1.0,<2",
+]
+
+[project.optional-dependencies]
+ingest = [
+    "aiohttp>=3.9,<4",
     "pokelance",
+]
+api = [
+    "fastapi>=0.115,<1",
+    "uvicorn[standard]>=0.30,<1",
 ]
 
 [tool.uv.sources]
@@ -16,11 +24,20 @@ pokelance = { path = "vendor/PokeLance" }
 [project.scripts]
 pokegraph-ingest = "pokegraph_ingest.ingest:main"
 pokegraph-schema = "pokegraph_ingest.schema:main"
+pokegraph-api = "pokegraph_api.__main__:main"
 
 [build-system]
 requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.package-data]
+pokegraph = ["py.typed", "queries/**/*.cypher"]

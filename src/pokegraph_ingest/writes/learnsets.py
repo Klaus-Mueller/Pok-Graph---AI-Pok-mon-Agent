@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
 from typing import Any
 
 from neo4j import AsyncSession
 
-from ..resources import resource_id, resource_name
+from pokegraph.sources.models import Pokemon
+
 from ..schema import RELATIONSHIP_BATCH_SIZE
 
 
@@ -21,32 +21,25 @@ def _learnset_entry_id(
     return f"{pokemon_id}:{move_id}:{version_group_id}:{learn_method_id}:{level}:{order_part}"
 
 
-def learnset_entry_rows(
-    pokemon: Any,
-    *,
-    retrieved_at: datetime | None = None,
-) -> list[dict[str, Any]]:
+def learnset_entry_rows(pokemon: Pokemon) -> list[dict[str, Any]]:
     """Flatten pokemon.moves / version_group_details into LearnsetEntry rows."""
-    retrieved = (retrieved_at or datetime.now(timezone.utc)).isoformat()
+    retrieved = pokemon.provenance.retrieved_at.isoformat()
+    source_url = pokemon.provenance.source_url
+    source_version = pokemon.provenance.source_version
     pokemon_id = int(pokemon.id)
-    source_url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_id}/"
     rows: list[dict[str, Any]] = []
 
-    for entry in getattr(pokemon, "moves", []) or []:
-        move = entry.move
-        move_id = resource_id(move)
+    for entry in pokemon.moves:
+        move_id = entry.move.id
         if move_id is None:
             continue
-        move_name = resource_name(move)
-        for detail in getattr(entry, "version_group_details", []) or []:
-            version_group = detail.version_group
-            version_group_id = resource_id(version_group)
-            learn_method = detail.move_learn_method
-            learn_method_id = resource_id(learn_method)
+        for detail in entry.version_group_details:
+            version_group_id = detail.version_group.id
+            learn_method_id = detail.move_learn_method.id
             if version_group_id is None or learn_method_id is None:
                 continue
-            level = int(getattr(detail, "level_learned_at", 0) or 0)
-            order = getattr(detail, "order", None)
+            level = int(detail.level_learned_at or 0)
+            order = detail.order
             rows.append(
                 {
                     "id": _learnset_entry_id(
@@ -59,14 +52,15 @@ def learnset_entry_rows(
                     ),
                     "pokemon_id": pokemon_id,
                     "move_id": move_id,
-                    "move_name": move_name,
+                    "move_name": entry.move.name,
                     "version_group_id": version_group_id,
-                    "version_group_name": resource_name(version_group),
+                    "version_group_name": detail.version_group.name,
                     "learn_method_id": learn_method_id,
-                    "learn_method_name": resource_name(learn_method),
+                    "learn_method_name": detail.move_learn_method.name,
                     "level_learned_at": level,
                     "order": order,
                     "source_url": source_url,
+                    "source_version": source_version,
                     "retrieved_at": retrieved,
                 }
             )
@@ -96,6 +90,7 @@ async def write_learnsets(session: AsyncSession, rows: list[dict[str, Any]]) -> 
               e.level_learned_at = item.level_learned_at,
               e.order = item.order,
               e.source_url = item.source_url,
+              e.source_version = item.source_version,
               e.retrieved_at = item.retrieved_at
           MERGE (p)-[:HAS_LEARNSET_ENTRY]->(e)
           MERGE (e)-[:TEACHES]->(m)

@@ -3,7 +3,7 @@
 // does_not: Claim the evolution is available in a given game unless version_group is present; do not collapse alternatives.
 // required: $species_id (int)
 // optional: $skip (int), $limit (int)
-// returns: evolves_to_id, from_species_id, from_species_name, to_species_id, to_species_name, trigger, min_level, min_happiness, min_beauty, min_affection, time_of_day, needs_overworld_rain, turn_upside_down, relative_physical_stats, known_move, known_move_type, held_item, location, party_species, trade_species, gender, version_group, region, is_default, item_id, item_name
+// returns: evolves_to_id, from_species_id, from_species_name, to_species_id, to_species_name, trigger, min_level, min_happiness, min_beauty, min_affection, time_of_day, needs_overworld_rain, turn_upside_down, relative_physical_stats, known_move, known_move_type, held_item, location, party_species, trade_species, gender, version_group, region, is_default, item_id, item_name, source_url, source_version, retrieved_at
 // order: to_species_id, evolves_to_id
 // limit: coalesce($limit, 50)
 
@@ -35,7 +35,10 @@ RETURN rel.id AS evolves_to_id,
        rel.region AS region,
        rel.is_default AS is_default,
        i.id AS item_id,
-       i.name AS item_name
+       i.name AS item_name,
+       rel.source_url AS source_url,
+       rel.source_version AS source_version,
+       rel.retrieved_at AS retrieved_at
 ORDER BY to_species_id, evolves_to_id
 SKIP coalesce($skip, 0)
 LIMIT coalesce($limit, 50)

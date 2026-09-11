@@ -3,7 +3,7 @@
 // does_not: Prove a Pokémon is unobtainable here, or use AVAILABLE_IN_VERSION as evidence.
 // required: $location_area_id (int), $version_id (int)
 // optional: $method_id (int), $min_level (int), $max_level (int), $skip (int), $limit (int)
-// returns: encounter_id, pokemon_id, pokemon_name, version_id, version_name, location_area_id, location_area_name, location_id, location_name, region_id, region_name, method_id, method_name, min_level, max_level, chance, condition_values
+// returns: encounter_id, pokemon_id, pokemon_name, version_id, version_name, location_area_id, location_area_name, location_id, location_name, region_id, region_name, method_id, method_name, min_level, max_level, chance, condition_values, source_url, source_version, retrieved_at
 // order: pokemon_id, location_area_id, method_id, min_level, encounter_id
 // limit: coalesce($limit, 50)
 
@@ -32,7 +32,10 @@ RETURN e.id AS encounter_id,
        e.min_level AS min_level,
        e.max_level AS max_level,
        e.chance AS chance,
-       e.condition_values AS condition_values
+       e.condition_values AS condition_values,
+       e.source_url AS source_url,
+       e.source_version AS source_version,
+       e.retrieved_at AS retrieved_at
 ORDER BY pokemon_id, location_area_id, method_id, min_level, encounter_id
 SKIP coalesce($skip, 0)
 LIMIT coalesce($limit, 50)

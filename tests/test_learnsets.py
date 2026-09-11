@@ -1,84 +1,55 @@
 from __future__ import annotations
 
 import unittest
-from datetime import datetime, timezone
-from types import SimpleNamespace
 
+from pokegraph.sources.models import PokemonMoveEntry, VersionGroupDetail
 from pokegraph_ingest.writes.learnsets import _learnset_entry_id, learnset_entry_rows
 from pokegraph_ingest.writes.pokemon import relationship_rows
 
-
-def _named(name: str, resource_id: int) -> SimpleNamespace:
-    return SimpleNamespace(name=name, url=f"https://pokeapi.co/api/v2/resource/{resource_id}/")
-
-
-def _detail(
-    *,
-    version_group: tuple[str, int],
-    method: tuple[str, int],
-    level: int,
-    order: int | None,
-) -> SimpleNamespace:
-    return SimpleNamespace(
-        version_group=_named(*version_group),
-        move_learn_method=_named(*method),
-        level_learned_at=level,
-        order=order,
-    )
-
-
-def _pokemon_with_moves(moves: list[SimpleNamespace]) -> SimpleNamespace:
-    return SimpleNamespace(
-        id=25,
-        name="pikachu",
-        types=[],
-        abilities=[],
-        moves=moves,
-    )
+from tests.model_fixtures import detail, named, pokemon_with_moves, provenance
 
 
 class LearnsetEntryRowsTests(unittest.TestCase):
     def test_multiple_methods_and_version_groups(self) -> None:
-        pokemon = _pokemon_with_moves(
+        pokemon = pokemon_with_moves(
             [
-                SimpleNamespace(
-                    move=_named("thunderbolt", 85),
-                    version_group_details=[
-                        _detail(
+                PokemonMoveEntry(
+                    move=named("thunderbolt", 85),
+                    version_group_details=(
+                        detail(
                             version_group=("heartgold-soulsilver", 10),
                             method=("level-up", 1),
                             level=26,
                             order=1,
                         ),
-                        _detail(
+                        detail(
                             version_group=("heartgold-soulsilver", 10),
                             method=("machine", 4),
                             level=0,
                             order=None,
                         ),
-                        _detail(
+                        detail(
                             version_group=("red-blue", 1),
                             method=("level-up", 1),
                             level=26,
                             order=2,
                         ),
-                    ],
+                    ),
                 ),
-                SimpleNamespace(
-                    move=_named("quick-attack", 98),
-                    version_group_details=[
-                        _detail(
+                PokemonMoveEntry(
+                    move=named("quick-attack", 98),
+                    version_group_details=(
+                        detail(
                             version_group=("heartgold-soulsilver", 10),
                             method=("level-up", 1),
                             level=13,
                             order=1,
                         ),
-                    ],
+                    ),
                 ),
             ]
         )
-        retrieved = datetime(2026, 8, 27, 12, 0, tzinfo=timezone.utc)
-        rows = learnset_entry_rows(pokemon, retrieved_at=retrieved)
+        rows = learnset_entry_rows(pokemon)
 
         self.assertEqual(len(rows), 4)
         ids = {row["id"] for row in rows}
@@ -90,7 +61,8 @@ class LearnsetEntryRowsTests(unittest.TestCase):
         self.assertEqual(tb_machine["level_learned_at"], 0)
         self.assertIsNone(tb_machine["order"])
         self.assertEqual(tb_machine["source_url"], "https://pokeapi.co/api/v2/pokemon/25/")
-        self.assertEqual(tb_machine["retrieved_at"], retrieved.isoformat())
+        self.assertEqual(tb_machine["source_version"], "unavailable")
+        self.assertEqual(tb_machine["retrieved_at"], pokemon.provenance.retrieved_at.isoformat())
 
         levels = sorted(
             r["level_learned_at"]
@@ -107,24 +79,14 @@ class LearnsetEntryRowsTests(unittest.TestCase):
         self.assertEqual(orders, {("heartgold-soulsilver", 1), ("red-blue", 2)})
 
     def test_different_levels_produce_distinct_ids(self) -> None:
-        pokemon = _pokemon_with_moves(
+        pokemon = pokemon_with_moves(
             [
-                SimpleNamespace(
-                    move=_named("thunder-shock", 84),
-                    version_group_details=[
-                        _detail(
-                            version_group=("red-blue", 1),
-                            method=("level-up", 1),
-                            level=1,
-                            order=1,
-                        ),
-                        _detail(
-                            version_group=("red-blue", 1),
-                            method=("level-up", 1),
-                            level=9,
-                            order=2,
-                        ),
-                    ],
+                PokemonMoveEntry(
+                    move=named("thunder-shock", 84),
+                    version_group_details=(
+                        detail(version_group=("red-blue", 1), method=("level-up", 1), level=1, order=1),
+                        detail(version_group=("red-blue", 1), method=("level-up", 1), level=9, order=2),
+                    ),
                 ),
             ]
         )
@@ -137,40 +99,40 @@ class LearnsetEntryRowsTests(unittest.TestCase):
         )
 
     def test_reextraction_is_stable(self) -> None:
-        pokemon = _pokemon_with_moves(
+        pokemon = pokemon_with_moves(
             [
-                SimpleNamespace(
-                    move=_named("thunderbolt", 85),
-                    version_group_details=[
-                        _detail(
+                PokemonMoveEntry(
+                    move=named("thunderbolt", 85),
+                    version_group_details=(
+                        detail(
                             version_group=("heartgold-soulsilver", 10),
                             method=("machine", 4),
                             level=0,
                             order=None,
                         ),
-                    ],
+                    ),
                 ),
-            ]
+            ],
+            provenance=provenance(),
         )
-        fixed = datetime(2026, 1, 1, tzinfo=timezone.utc)
-        first = learnset_entry_rows(pokemon, retrieved_at=fixed)
-        second = learnset_entry_rows(pokemon, retrieved_at=fixed)
+        first = learnset_entry_rows(pokemon)
+        second = learnset_entry_rows(pokemon)
         self.assertEqual(first, second)
         self.assertEqual(first[0]["id"], "25:85:10:4:0:")
 
     def test_skips_incomplete_details(self) -> None:
-        pokemon = _pokemon_with_moves(
+        pokemon = pokemon_with_moves(
             [
-                SimpleNamespace(
-                    move=_named("splash", 150),
-                    version_group_details=[
-                        SimpleNamespace(
-                            version_group=SimpleNamespace(name="x-y", url=""),
-                            move_learn_method=_named("level-up", 1),
+                PokemonMoveEntry(
+                    move=named("splash", 150),
+                    version_group_details=(
+                        VersionGroupDetail(
+                            version_group=named("x-y", None, url=""),
+                            move_learn_method=named("level-up", 1),
                             level_learned_at=1,
                             order=1,
                         ),
-                    ],
+                    ),
                 ),
             ]
         )
@@ -179,24 +141,24 @@ class LearnsetEntryRowsTests(unittest.TestCase):
 
 class CanLearnSimplificationTests(unittest.TestCase):
     def test_can_learn_is_unique_per_move(self) -> None:
-        pokemon = _pokemon_with_moves(
+        pokemon = pokemon_with_moves(
             [
-                SimpleNamespace(
-                    move=_named("thunderbolt", 85),
-                    version_group_details=[
-                        _detail(
+                PokemonMoveEntry(
+                    move=named("thunderbolt", 85),
+                    version_group_details=(
+                        detail(
                             version_group=("heartgold-soulsilver", 10),
                             method=("level-up", 1),
                             level=26,
                             order=1,
                         ),
-                        _detail(
+                        detail(
                             version_group=("heartgold-soulsilver", 10),
                             method=("machine", 4),
                             level=0,
                             order=None,
                         ),
-                    ],
+                    ),
                 ),
             ]
         )

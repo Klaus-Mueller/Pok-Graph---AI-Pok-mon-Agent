@@ -3,22 +3,19 @@ from __future__ import annotations
 from typing import Any
 
 from neo4j import AsyncSession
-from pokelance import PokeLance
+
+from pokegraph.sources.base import DataSource
+from pokegraph.sources.models import EvolutionDetail, EvolutionLink, PokemonSpecies
 
 from ..cache import EnrichmentCache
-from ..resources import resource_id, resource_name
 from ..schema import RELATIONSHIP_BATCH_SIZE
 
 
-def _species_id_from_link(link: Any) -> int | None:
-    return resource_id(getattr(link, "species", None))
-
-
-def _evolution_edge_props(detail: Any, from_id: int, to_id: int) -> dict[str, Any]:
-    trigger = resource_name(detail.trigger) or ""
-    version_group = resource_name(detail.version_group) or ""
-    item_name = resource_name(detail.item) if detail.item else ""
-    region = resource_name(detail.region) if detail.region else ""
+def _evolution_edge_props(detail: EvolutionDetail, from_id: int, to_id: int) -> dict[str, Any]:
+    trigger = (detail.trigger.name if detail.trigger else "") or ""
+    version_group = (detail.version_group.name if detail.version_group else "") or ""
+    item_name = detail.item.name if detail.item else ""
+    region = detail.region.name if detail.region else ""
     min_level = detail.min_level if detail.min_level is not None else ""
     edge_id = f"{from_id}:{to_id}:{trigger}:{version_group}:{item_name}:{min_level}:{region}"
     return {
@@ -32,12 +29,12 @@ def _evolution_edge_props(detail: Any, from_id: int, to_id: int) -> dict[str, An
         "needs_overworld_rain": bool(detail.needs_overworld_rain),
         "turn_upside_down": bool(detail.turn_upside_down),
         "relative_physical_stats": detail.relative_physical_stats,
-        "known_move": resource_name(detail.known_move) if detail.known_move else None,
-        "known_move_type": resource_name(detail.known_move_type) if detail.known_move_type else None,
-        "held_item": resource_name(detail.held_item) if detail.held_item else None,
-        "location": resource_name(detail.location) if detail.location else None,
-        "party_species": resource_name(detail.party_species) if detail.party_species else None,
-        "trade_species": resource_name(detail.trade_species) if detail.trade_species else None,
+        "known_move": detail.known_move.name if detail.known_move else None,
+        "known_move_type": detail.known_move_type.name if detail.known_move_type else None,
+        "held_item": detail.held_item.name if detail.held_item else None,
+        "location": detail.location.name if detail.location else None,
+        "party_species": detail.party_species.name if detail.party_species else None,
+        "trade_species": detail.trade_species.name if detail.trade_species else None,
         "gender": str(detail.gender) if detail.gender is not None else None,
         "version_group": version_group or None,
         "region": region or None,
@@ -45,27 +42,30 @@ def _evolution_edge_props(detail: Any, from_id: int, to_id: int) -> dict[str, An
     }
 
 
-def _walk_chain(chain_id: int, link: Any, from_species_id: int | None = None) -> tuple[list[dict], list[dict], list[dict]]:
-    """Return (species_rows, evolve_rows, item_rows)."""
+def _walk_chain(
+    chain_id: int,
+    link: EvolutionLink,
+    from_species_id: int | None = None,
+) -> tuple[list[dict], list[dict], list[dict]]:
     species_rows: list[dict[str, Any]] = []
     evolve_rows: list[dict[str, Any]] = []
     item_rows: list[dict[str, Any]] = []
 
-    species_id = _species_id_from_link(link)
+    species_id = link.species.id
     if species_id is None:
         return species_rows, evolve_rows, item_rows
 
     species_rows.append(
         {
             "id": species_id,
-            "name": resource_name(link.species),
+            "name": link.species.name,
             "chain_id": chain_id,
-            "is_baby": bool(getattr(link, "is_baby", False)),
+            "is_baby": bool(link.is_baby),
         }
     )
 
     if from_species_id is not None:
-        for detail in getattr(link, "evolution_details", []) or []:
+        for detail in link.evolution_details:
             props = _evolution_edge_props(detail, from_species_id, species_id)
             evolve_rows.append(
                 {
@@ -75,18 +75,16 @@ def _walk_chain(chain_id: int, link: Any, from_species_id: int | None = None) ->
                 }
             )
             item = detail.item
-            if item is not None:
-                item_id = resource_id(item)
-                if item_id is not None:
-                    item_rows.append(
-                        {
-                            "species_id": species_id,
-                            "item_id": item_id,
-                            "item_name": resource_name(item),
-                        }
-                    )
+            if item is not None and item.id is not None:
+                item_rows.append(
+                    {
+                        "species_id": species_id,
+                        "item_id": item.id,
+                        "item_name": item.name,
+                    }
+                )
 
-    for child in getattr(link, "evolves_to", []) or []:
+    for child in link.evolves_to:
         child_species, child_evolve, child_items = _walk_chain(chain_id, child, from_species_id=species_id)
         species_rows.extend(child_species)
         evolve_rows.extend(child_evolve)
@@ -97,16 +95,15 @@ def _walk_chain(chain_id: int, link: Any, from_species_id: int | None = None) ->
 
 async def write_evolution_chain(
     session: AsyncSession,
-    pokeapi: PokeLance,
+    source: DataSource,
     cache: EnrichmentCache,
-    species: Any,
+    species: PokemonSpecies,
 ) -> None:
-    chain_ref = getattr(species, "evolution_chain", None)
-    chain_id = resource_id(chain_ref)
+    chain_ref = species.evolution_chain
+    chain_id = chain_ref.id if chain_ref is not None else None
     if chain_id is None:
         return
     if chain_id in cache.evolution_chains:
-        # Still ensure current species links to the chain.
         result = await session.run(
             """
             MERGE (s:PokemonSpecies {id: $species_id})
@@ -119,8 +116,16 @@ async def write_evolution_chain(
         await result.consume()
         return
 
-    chain = await pokeapi.evolution.fetch_evolution_chain(chain_id)
+    chain = await source.get_evolution_chain(chain_id)
     species_rows, evolve_rows, item_rows = _walk_chain(chain.id, chain.chain)
+    provenance = chain.provenance
+    source_url = provenance.source_url
+    source_version = provenance.source_version
+    retrieved_at = provenance.retrieved_at.isoformat()
+    for row in evolve_rows:
+        row["source_url"] = source_url
+        row["source_version"] = source_version
+        row["retrieved_at"] = retrieved_at
 
     batch = RELATIONSHIP_BATCH_SIZE
     if species_rows:
@@ -165,7 +170,10 @@ async def write_evolution_chain(
                   r.gender = item.gender,
                   r.version_group = item.version_group,
                   r.region = item.region,
-                  r.is_default = item.is_default
+                  r.is_default = item.is_default,
+                  r.source_url = item.source_url,
+                  r.source_version = item.source_version,
+                  r.retrieved_at = item.retrieved_at
             }} IN TRANSACTIONS OF {batch} ROWS
             """,
             rows=evolve_rows,

@@ -14,11 +14,11 @@ MERGE (location)-[:IN_REGION]->(region)
 MERGE (area)-[:PART_OF_LOCATION]->(location)
 MERGE (vg_ab)-[:IN_REGION]->(region)
 
-MERGE (t_electric:Type {id: -701}) SET t_electric.name = 'fixture-electric'
-MERGE (t_water:Type {id: -702}) SET t_water.name = 'fixture-water'
-MERGE (t_flying:Type {id: -703}) SET t_flying.name = 'fixture-flying'
-MERGE (t_ground:Type {id: -704}) SET t_ground.name = 'fixture-ground'
-MERGE (t_unenriched:Type {id: -705}) SET t_unenriched.name = 'fixture-unenriched'
+MERGE (t_electric:Type {id: -701}) SET t_electric.name = 'fixture-electric', t_electric.source_url = null, t_electric.source_version = null, t_electric.retrieved_at = null
+MERGE (t_water:Type {id: -702}) SET t_water.name = 'fixture-water', t_water.source_url = null, t_water.source_version = null, t_water.retrieved_at = null
+MERGE (t_flying:Type {id: -703}) SET t_flying.name = 'fixture-flying', t_flying.source_url = null, t_flying.source_version = null, t_flying.retrieved_at = null
+MERGE (t_ground:Type {id: -704}) SET t_ground.name = 'fixture-ground', t_ground.source_url = null, t_ground.source_version = null, t_ground.retrieved_at = null
+MERGE (t_unenriched:Type {id: -705}) SET t_unenriched.name = 'fixture-unenriched', t_unenriched.source_url = null, t_unenriched.source_version = null, t_unenriched.retrieved_at = null
 MERGE (t_electric)-[:DAMAGE_TO {factor: 2.0}]->(t_water)
 MERGE (t_electric)-[:DAMAGE_TO {factor: 2.0}]->(t_flying)
 MERGE (t_electric)-[:DAMAGE_TO {factor: 0.0}]->(t_ground)
@@ -64,13 +64,13 @@ MERGE (p_ground)-[:HAS_TYPE {slot: 1}]->(t_ground)
 MERGE (p_shared)-[:HAS_TYPE {slot: 1}]->(t_electric)
 
 MERGE (e_shared_a:Encounter {id: '-101:-601:-201:-901:15:25:30:'})
-SET e_shared_a.min_level = 15, e_shared_a.max_level = 25, e_shared_a.chance = 30, e_shared_a.condition_values = []
+SET e_shared_a.min_level = 15, e_shared_a.max_level = 25, e_shared_a.chance = 30, e_shared_a.condition_values = [], e_shared_a.source_url = null, e_shared_a.source_version = null, e_shared_a.retrieved_at = null
 MERGE (e_shared_b:Encounter {id: '-101:-601:-202:-901:15:25:30:'})
-SET e_shared_b.min_level = 15, e_shared_b.max_level = 25, e_shared_b.chance = 30, e_shared_b.condition_values = []
+SET e_shared_b.min_level = 15, e_shared_b.max_level = 25, e_shared_b.chance = 30, e_shared_b.condition_values = [], e_shared_b.source_url = null, e_shared_b.source_version = null, e_shared_b.retrieved_at = null
 MERGE (e_only_a:Encounter {id: '-102:-601:-201:-901:5:10:20:'})
-SET e_only_a.min_level = 5, e_only_a.max_level = 10, e_only_a.chance = 20, e_only_a.condition_values = []
+SET e_only_a.min_level = 5, e_only_a.max_level = 10, e_only_a.chance = 20, e_only_a.condition_values = [], e_only_a.source_url = null, e_only_a.source_version = null, e_only_a.retrieved_at = null
 MERGE (e_only_b:Encounter {id: '-103:-601:-202:-901:5:10:20:'})
-SET e_only_b.min_level = 5, e_only_b.max_level = 10, e_only_b.chance = 20, e_only_b.condition_values = []
+SET e_only_b.min_level = 5, e_only_b.max_level = 10, e_only_b.chance = 20, e_only_b.condition_values = [], e_only_b.source_url = null, e_only_b.source_version = null, e_only_b.retrieved_at = null
 
 MERGE (p_shared)-[:HAS_ENCOUNTER]->(e_shared_a)
 MERGE (e_shared_a)-[:AT_LOCATION_AREA]->(area)
@@ -97,6 +97,7 @@ SET le_level.pokemon_id = -101,
     le_level.level_learned_at = 26,
     le_level.order = 1,
     le_level.source_url = 'https://pokeapi.co/api/v2/pokemon/-101/',
+    le_level.source_version = null,
     le_level.retrieved_at = '2026-01-01T00:00:00+00:00'
 MERGE (le_machine:LearnsetEntry {id: '-101:-801:-301:-912:0:'})
 SET le_machine.pokemon_id = -101,
@@ -106,6 +107,7 @@ SET le_machine.pokemon_id = -101,
     le_machine.level_learned_at = 0,
     le_machine.order = null,
     le_machine.source_url = 'https://pokeapi.co/api/v2/pokemon/-101/',
+    le_machine.source_version = null,
     le_machine.retrieved_at = '2026-01-01T00:00:00+00:00'
 MERGE (p_shared)-[:HAS_LEARNSET_ENTRY]->(le_level)
 MERGE (le_level)-[:TEACHES]->(m_tb)
@@ -141,7 +143,10 @@ SET evo_water.trigger = 'use-item',
     evo_water.gender = null,
     evo_water.version_group = null,
     evo_water.region = null,
-    evo_water.is_default = true
+    evo_water.is_default = true,
+    evo_water.source_url = null,
+    evo_water.source_version = null,
+    evo_water.retrieved_at = null
 MERGE (s_branch)-[evo_thunder:EVOLVES_TO {id: '-111:-113:use-item::thunder-stone::'}]->(s_thunder)
 SET evo_thunder.trigger = 'use-item',
     evo_thunder.min_level = null,
@@ -161,6 +166,9 @@ SET evo_thunder.trigger = 'use-item',
     evo_thunder.gender = null,
     evo_thunder.version_group = null,
     evo_thunder.region = null,
-    evo_thunder.is_default = true
+    evo_thunder.is_default = true,
+    evo_thunder.source_url = null,
+    evo_thunder.source_version = null,
+    evo_thunder.retrieved_at = null
 MERGE (s_water)-[:REQUIRES_ITEM]->(item_water)
 MERGE (s_thunder)-[:REQUIRES_ITEM]->(item_thunder)

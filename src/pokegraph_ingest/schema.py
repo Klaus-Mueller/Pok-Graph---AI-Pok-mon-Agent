@@ -5,7 +5,9 @@ import sys
 import time
 from typing import Any
 
-from neo4j import AsyncDriver, AsyncGraphDatabase, AsyncSession
+from neo4j import AsyncDriver, AsyncSession
+
+from pokegraph.graph.connection import create_driver
 
 from .config import Settings
 
@@ -175,10 +177,7 @@ def format_schema_report(report: dict[str, Any]) -> str:
 
 
 async def _run_verify(settings: Settings) -> int:
-    driver: AsyncDriver = AsyncGraphDatabase.driver(
-        settings.neo4j_uri,
-        auth=(settings.neo4j_username, settings.neo4j_password),
-    )
+    driver: AsyncDriver = create_driver(settings.neo4j, read_only=False)
     try:
         await driver.verify_connectivity()
         async with driver.session(database=settings.neo4j_database) as session:

@@ -15,3 +15,10 @@ IDs and stored coverage. These queries do not assert that a game, area, or Poké
 | [`find_move_by_name.cypher`](find_move_by_name.cypher) | Resolve a move name to `move_id` |
 | [`find_location_area_by_name.cypher`](find_location_area_by_name.cypher) | Resolve an area name to `location_area_id` |
 | [`dataset_fingerprint.cypher`](dataset_fingerprint.cypher) | Counts and latest learnset retrieval time |
+| [`get_pokemon.cypher`](get_pokemon.cypher) | Existence lookup used by the Python client |
+| [`get_species.cypher`](get_species.cypher) | Existence lookup used by the Python client |
+| [`get_location_area.cypher`](get_location_area.cypher) | Existence lookup used by the Python client |
+| [`get_move.cypher`](get_move.cypher) | Existence lookup used by the Python client |
+| [`get_version.cypher`](get_version.cypher) | Existence lookup used by the Python client |
+| [`get_version_group.cypher`](get_version_group.cypher) | Existence lookup used by the Python client |
+| [`get_type.cypher`](get_type.cypher) | Existence lookup used by the Python client |

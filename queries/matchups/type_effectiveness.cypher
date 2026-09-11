@@ -3,7 +3,7 @@
 // does_not: Assert generation-specific charts, or treat a missing edge as neutral unless the attacker is enriched.
 // required: $attacker_type_id (int), $defender_pokemon_id (int)
 // optional: (none)
-// returns: attacker_type_id, attacker_type_name, defender_pokemon_id, defender_pokemon_name, factor, effectiveness, data_complete
+// returns: attacker_type_id, attacker_type_name, defender_pokemon_id, defender_pokemon_name, factor, effectiveness, data_complete, source_url, source_version, retrieved_at
 // order: attacker_type_id, defender_pokemon_id
 // limit: 1 row
 
@@ -38,5 +38,8 @@ RETURN atk.id AS attacker_type_id,
          WHEN factor = 1.0 THEN 'neutral'
          ELSE 'weak'
        END AS effectiveness,
-       data_complete
+       data_complete,
+       atk.source_url AS source_url,
+       atk.source_version AS source_version,
+       atk.retrieved_at AS retrieved_at
 ORDER BY attacker_type_id, defender_pokemon_id

@@ -1,0 +1,2 @@
+recursive-include queries *.cypher
+recursive-include src/pokegraph/queries *.cypher

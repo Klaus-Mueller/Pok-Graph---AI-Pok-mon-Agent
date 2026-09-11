@@ -6,8 +6,9 @@ import time
 from dataclasses import dataclass, field
 
 import aiohttp
-from neo4j import AsyncGraphDatabase
-from pokelance import PokeLance
+
+from pokegraph.graph.connection import create_driver
+from pokegraph.sources.pokeapi import PokeApiSource
 
 from .cache import EnrichmentCache
 from .config import Settings
@@ -138,11 +139,12 @@ async def _resolve_pokemon_names(settings: Settings) -> list[str]:
 
 
 async def ingest(settings: Settings) -> None:
-    driver = AsyncGraphDatabase.driver(
-        settings.neo4j_uri,
-        auth=(settings.neo4j_username, settings.neo4j_password),
+    driver = create_driver(settings.neo4j, read_only=False)
+    source = PokeApiSource(
+        cache_size=settings.pokeapi_cache_size,
+        cache_dir=settings.pokeapi_cache_dir,
+        cache_ttl_s=settings.pokeapi_cache_ttl_s,
     )
-    pokeapi = PokeLance(cache_size=settings.pokeapi_cache_size, cache_endpoints=True)
     cache = EnrichmentCache()
     try:
         names = await _resolve_pokemon_names(settings)
@@ -160,8 +162,8 @@ async def ingest(settings: Settings) -> None:
                 progress.begin(name)
                 try:
                     progress.set_status("core")
-                    pokemon = await pokeapi.pokemon.fetch_pokemon(name)
-                    species = await pokeapi.pokemon.fetch_pokemon_species(pokemon.species.name)
+                    pokemon = await source.get_pokemon(name)
+                    species = await source.get_species(pokemon.species.name or pokemon.species.id or name)
                     type_ids, move_ids = await write_pokemon(session, pokemon, species)
 
                     progress.set_status("learnsets")
@@ -169,29 +171,29 @@ async def ingest(settings: Settings) -> None:
                     await write_learnsets(session, learnset_rows)
 
                     progress.set_status("moves")
-                    await enrich_moves(session, pokeapi, cache, move_ids)
+                    await enrich_moves(session, source, cache, move_ids)
 
                     progress.set_status("encounters")
-                    location_encounters = await pokeapi.pokemon.fetch_location_area_encounter(name)
-                    encounter_rows = flatten_encounters(pokemon.id, location_encounters)
+                    encounters = await source.get_encounters(name)
+                    encounter_rows = flatten_encounters(pokemon.id, encounters)
                     await write_encounters(session, pokemon.id, encounter_rows)
-                    await enrich_hierarchy(session, pokeapi, cache, encounter_rows)
+                    await enrich_hierarchy(session, source, cache, encounter_rows)
 
                     progress.set_status("evolution")
-                    await write_evolution_chain(session, pokeapi, cache, species)
+                    await write_evolution_chain(session, source, cache, species)
 
                     progress.set_status("types")
-                    await enrich_types(session, pokeapi, cache, type_ids)
+                    await enrich_types(session, source, cache, type_ids)
 
                     progress.set_status("source")
-                    await link_has_source(session, pokemon.id, species.id)
+                    await link_has_source(session, pokemon, species)
 
                     progress.succeed(name, pokemon.id)
                 except Exception as exc:  # noqa: BLE001 — continue full catalog on per-item failures
                     progress.fail(name, str(exc))
             progress.finish()
     finally:
-        await pokeapi.close()
+        await source.close()
         await driver.close()
 
 

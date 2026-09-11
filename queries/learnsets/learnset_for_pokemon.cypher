@@ -3,7 +3,7 @@
 // does_not: Treat level_learned_at = 0 as early-game access, or bind a learnset to a single GameVersion.
 // required: $pokemon_id (int), $version_group_id (int)
 // optional: $learn_method_id (int), $skip (int), $limit (int)
-// returns: learnset_entry_id, pokemon_id, pokemon_name, move_id, move_name, version_group_id, version_group_name, learn_method_id, learn_method_name, level_learned_at, learn_order, source_url, retrieved_at
+// returns: learnset_entry_id, pokemon_id, pokemon_name, move_id, move_name, version_group_id, version_group_name, learn_method_id, learn_method_name, level_learned_at, learn_order, source_url, source_version, retrieved_at
 // order: learn_method_id, level_learned_at, move_id, learnset_entry_id
 // limit: coalesce($limit, 50)
 
@@ -24,6 +24,7 @@ RETURN e.id AS learnset_entry_id,
        e.level_learned_at AS level_learned_at,
        e.order AS learn_order,
        e.source_url AS source_url,
+       e.source_version AS source_version,
        e.retrieved_at AS retrieved_at
 ORDER BY learn_method_id, level_learned_at, move_id, learnset_entry_id
 SKIP coalesce($skip, 0)

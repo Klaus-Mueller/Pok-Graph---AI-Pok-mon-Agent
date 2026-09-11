@@ -3,32 +3,36 @@ from __future__ import annotations
 from typing import Any
 
 from neo4j import AsyncSession
-from pokelance import PokeLance
+
+from pokegraph.sources.base import DataSource
+from pokegraph.sources.models import Type
 
 from ..cache import EnrichmentCache
-from ..resources import resource_id, resource_name
 from ..schema import RELATIONSHIP_BATCH_SIZE
 
 
-def _damage_rows(type_id: int, type_name: str, relations: Any) -> list[dict[str, Any]]:
+def _damage_rows(type_model: Type) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     mapping = (
-        (getattr(relations, "double_damage_to", []), 2.0),
-        (getattr(relations, "half_damage_to", []), 0.5),
-        (getattr(relations, "no_damage_to", []), 0.0),
+        (type_model.damage_relations.double_damage_to, 2.0),
+        (type_model.damage_relations.half_damage_to, 0.5),
+        (type_model.damage_relations.no_damage_to, 0.0),
     )
+    provenance = type_model.provenance
     for targets, factor in mapping:
         for target in targets:
-            target_id = resource_id(target)
-            if target_id is None:
+            if target.id is None:
                 continue
             rows.append(
                 {
-                    "from_id": type_id,
-                    "from_name": type_name,
-                    "to_id": target_id,
-                    "to_name": resource_name(target),
+                    "from_id": type_model.id,
+                    "from_name": type_model.name,
+                    "to_id": target.id,
+                    "to_name": target.name,
                     "factor": factor,
+                    "source_url": provenance.source_url,
+                    "source_version": provenance.source_version,
+                    "retrieved_at": provenance.retrieved_at.isoformat(),
                 }
             )
     return rows
@@ -36,7 +40,7 @@ def _damage_rows(type_id: int, type_name: str, relations: Any) -> list[dict[str,
 
 async def enrich_types(
     session: AsyncSession,
-    pokeapi: PokeLance,
+    source: DataSource,
     cache: EnrichmentCache,
     type_ids: list[int],
 ) -> None:
@@ -44,15 +48,22 @@ async def enrich_types(
     for type_id in type_ids:
         if type_id in cache.types:
             continue
-        type_model = await pokeapi.pokemon.fetch_type(type_id)
-        rows = _damage_rows(type_model.id, type_model.name, type_model.damage_relations)
+        type_model = await source.get_type(type_id)
+        rows = _damage_rows(type_model)
+        provenance = type_model.provenance
         result = await session.run(
             """
             MERGE (t:Type {id: $type_id})
-            SET t.name = $type_name
+            SET t.name = $type_name,
+                t.source_url = $source_url,
+                t.source_version = $source_version,
+                t.retrieved_at = $retrieved_at
             """,
             type_id=type_model.id,
             type_name=type_model.name,
+            source_url=provenance.source_url,
+            source_version=provenance.source_version,
+            retrieved_at=provenance.retrieved_at.isoformat(),
         )
         await result.consume()
         if rows:
@@ -65,7 +76,10 @@ async def enrich_types(
                   MERGE (to:Type {{id: item.to_id}})
                   SET to.name = coalesce(to.name, item.to_name)
                   MERGE (from)-[r:DAMAGE_TO]->(to)
-                  SET r.factor = item.factor
+                  SET r.factor = item.factor,
+                      r.source_url = item.source_url,
+                      r.source_version = item.source_version,
+                      r.retrieved_at = item.retrieved_at
                 }} IN TRANSACTIONS OF {batch} ROWS
                 """,
                 rows=rows,

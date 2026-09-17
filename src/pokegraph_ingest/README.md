@@ -65,7 +65,13 @@ Relationship writes use `CALL … IN TRANSACTIONS` so large lists commit in batc
 
 ### Deferred (not from PokéAPI)
 
-`Trainer`, `TrainerPokemon`, and `Progression` require curated project datasets. This ingest does not create them.
+The PokéAPI ingest does not create trainer teams or progression. The separate
+`pokegraph-battles` command prepares and optionally ingests the curated Bulbapedia
+corpus as `Trainer`, `BattleEncounter`, `BattleVariant`, `TrainerPokemon` nodes, with
+`KNOWS_MOVE` relationships to existing `Move` nodes. The battle importer emits no Source nodes or source properties. See
+[`battle corpus README`](../../data/corpora/red-green-blue-first-battle/README.md)
+for preparation, validation and `--write` commands. Structured progression gates
+and player state remain deferred; source conditions are preserved as text.
 
 ## Indexes and constraints
 

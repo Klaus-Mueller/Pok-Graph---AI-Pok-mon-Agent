@@ -1,0 +1,75 @@
+{
+  "status": "prepared_not_ingested",
+  "counts": {
+    "Trainer": 1,
+    "BattleEncounter": 16,
+    "BattleVariant": 48,
+    "TrainerPokemon": 198,
+    "KNOWS_MOVE": 702
+  },
+  "question_count": 26,
+  "canonical_checked_at": "2026-09-13T22:26:30.473538+00:00",
+  "canonical_check_method": "neo4j_read_only",
+  "version_coverage": [
+    {
+      "id": 44,
+      "name": "red-japan",
+      "groups": [
+        {
+          "id": 28,
+          "name": "red-green-japan"
+        }
+      ],
+      "encounter_count": 872,
+      "learnset_count": 4128
+    },
+    {
+      "id": 45,
+      "name": "green-japan",
+      "groups": [
+        {
+          "id": 28,
+          "name": "red-green-japan"
+        }
+      ],
+      "encounter_count": 872,
+      "learnset_count": 4128
+    }
+  ],
+  "unresolved_locations": [],
+  "location_mapping_policy": {
+    "Professor Oak's Laboratory": "pallet-town",
+    "Route 22": "kanto-route-22",
+    "Cerulean City": "cerulean-city",
+    "S.S. Anne": "ss-anne",
+    "Pokémon Tower": "pokemon-tower",
+    "Silph Co.": "saffron-city",
+    "Indigo Plateau": "indigo-plateau"
+  },
+  "partial_progression_orders": [
+    1,
+    2,
+    3,
+    4,
+    7
+  ],
+  "unknown_progression_orders": [
+    5,
+    6,
+    8
+  ],
+  "manual_normalizations": {
+    "Sand-Attack": "sand-attack",
+    "PoisonPowder": "poison-powder",
+    "SolarBeam": "solar-beam"
+  },
+  "extraction": "deterministic line parser; no inferred facts",
+  "source_cleanup": "collector ends at printfooter; source snapshots and chunk IDs preserved",
+  "checks": [
+    "first_battle_fixture",
+    "question_evidence",
+    "eight_battles_two_versions_three_starters",
+    "canonical_references",
+    "typed_payload_roundtrip"
+  ]
+}

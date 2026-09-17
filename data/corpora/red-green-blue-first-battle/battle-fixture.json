@@ -1,0 +1,126 @@
+{
+  "id": "blue-oak-lab-first-red-green-jp",
+  "status": "manually_reviewed_extraction_fixture_not_ingested",
+  "trainer_display_name": "Blue",
+  "game_scope": [
+    "red-jp",
+    "green-jp"
+  ],
+  "game_mapping_status": "resolved_from_neo4j_query",
+  "version_group": {"id": 28, "name": "red-green-japan"},
+  "game_versions": [
+    {
+      "scope": "red-jp",
+      "name": "red-japan",
+      "id": 44
+    },
+    {
+      "scope": "green-jp",
+      "name": "green-japan",
+      "id": 45
+    }
+  ],
+  "generation": 1,
+  "battle_order": 1,
+  "location": "Professor Oak's Laboratory",
+  "location_mapping_status": "resolved",
+  "victory_required_for_progression": false,
+  "outcome_evidence_chunk_id": "blue-first-outcome",
+  "variants": [
+    {
+      "player_starter": "bulbasaur",
+      "members": [
+        {
+          "slot": 1,
+          "species": "charmander",
+          "level": 5,
+          "moves": [
+            "scratch",
+            "growl"
+          ],
+          "species_reference": {
+            "namespace": "pokeapi",
+            "resource": "pokemon-species",
+            "id": 4,
+            "mapping_status": "resolved_from_neo4j_query"
+          },
+          "ability": {
+            "status": "not_extracted"
+          },
+          "held_item": {
+            "status": "not_extracted"
+          }
+        }
+      ],
+      "evidence_chunk_id": "blue-first-bulbasaur",
+      "source_url": "https://bulbapedia.bulbagarden.net/wiki/Blue_(game)/Red,_Green,_and_Blue#First_battle",
+      "source_revision": "4399706"
+    },
+    {
+      "player_starter": "charmander",
+      "members": [
+        {
+          "slot": 1,
+          "species": "squirtle",
+          "level": 5,
+          "moves": [
+            "tackle",
+            "tail-whip"
+          ],
+          "species_reference": {
+            "namespace": "pokeapi",
+            "resource": "pokemon-species",
+            "id": 7,
+            "mapping_status": "resolved_from_neo4j_query"
+          },
+          "ability": {
+            "status": "not_extracted"
+          },
+          "held_item": {
+            "status": "not_extracted"
+          }
+        }
+      ],
+      "evidence_chunk_id": "blue-first-charmander",
+      "source_url": "https://bulbapedia.bulbagarden.net/wiki/Blue_(game)/Red,_Green,_and_Blue#First_battle",
+      "source_revision": "4399706"
+    },
+    {
+      "player_starter": "squirtle",
+      "members": [
+        {
+          "slot": 1,
+          "species": "bulbasaur",
+          "level": 5,
+          "moves": [
+            "tackle",
+            "growl"
+          ],
+          "species_reference": {
+            "namespace": "pokeapi",
+            "resource": "pokemon-species",
+            "id": 1,
+            "mapping_status": "resolved_from_neo4j_query"
+          },
+          "ability": {
+            "status": "not_extracted"
+          },
+          "held_item": {
+            "status": "not_extracted"
+          }
+        }
+      ],
+      "evidence_chunk_id": "blue-first-squirtle",
+      "source_url": "https://bulbapedia.bulbagarden.net/wiki/Blue_(game)/Red,_Green,_and_Blue#First_battle",
+      "source_revision": "4399706"
+    }
+  ],
+  "not_established": [
+    "pre_battle_capture_access",
+    "player_initial_moves",
+    "generation_specific_damage_calculation",
+    "best_strategy"
+  ],
+  "attribution": "Bulbapedia contributors",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.5/"
+}

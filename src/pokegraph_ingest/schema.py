@@ -10,6 +10,7 @@ from neo4j import AsyncDriver, AsyncSession
 from pokegraph.graph.connection import create_driver
 
 from .config import Settings
+from .battle_schema import BATTLE_CONSTRAINTS
 
 SCHEMA_QUERIES = (
     "CREATE CONSTRAINT pokemon_id IF NOT EXISTS FOR (p:Pokemon) REQUIRE p.id IS UNIQUE",
@@ -31,7 +32,7 @@ SCHEMA_QUERIES = (
     "CREATE CONSTRAINT evolves_to_id IF NOT EXISTS FOR ()-[r:EVOLVES_TO]-() REQUIRE r.id IS UNIQUE",
     "CREATE CONSTRAINT learnset_entry_id IF NOT EXISTS FOR (e:LearnsetEntry) REQUIRE e.id IS UNIQUE",
     "CREATE CONSTRAINT move_learn_method_id IF NOT EXISTS FOR (m:MoveLearnMethod) REQUIRE m.id IS UNIQUE",
-)
+) + BATTLE_CONSTRAINTS
 
 EXPECTED_CONSTRAINT_NAMES: frozenset[str] = frozenset(
     (
@@ -53,6 +54,10 @@ EXPECTED_CONSTRAINT_NAMES: frozenset[str] = frozenset(
         "evolves_to_id",
         "learnset_entry_id",
         "move_learn_method_id",
+        "trainer_id",
+        "battle_encounter_id",
+        "battle_variant_id",
+        "trainer_pokemon_id",
     )
 )
 

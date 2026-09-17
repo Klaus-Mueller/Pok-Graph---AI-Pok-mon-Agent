@@ -1,0 +1,3115 @@
+{
+  "checked_at": "2026-09-13T22:26:30.473538+00:00",
+  "method": "neo4j_read_only",
+  "aliases": {
+    "Sand-Attack": "sand-attack",
+    "PoisonPowder": "poison-powder",
+    "SolarBeam": "solar-beam"
+  },
+  "pokemon": [
+    {
+      "id": 1,
+      "name": "bulbasaur",
+      "is_default": true,
+      "species": [
+        {
+          "id": 1,
+          "name": "bulbasaur"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "is_default": true,
+      "species": [
+        {
+          "id": 2,
+          "name": "ivysaur"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "venusaur",
+      "is_default": true,
+      "species": [
+        {
+          "id": 3,
+          "name": "venusaur"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "is_default": true,
+      "species": [
+        {
+          "id": 4,
+          "name": "charmander"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "charmeleon",
+      "is_default": true,
+      "species": [
+        {
+          "id": 5,
+          "name": "charmeleon"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "charizard",
+      "is_default": true,
+      "species": [
+        {
+          "id": 6,
+          "name": "charizard"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "squirtle",
+      "is_default": true,
+      "species": [
+        {
+          "id": 7,
+          "name": "squirtle"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "wartortle",
+      "is_default": true,
+      "species": [
+        {
+          "id": 8,
+          "name": "wartortle"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "blastoise",
+      "is_default": true,
+      "species": [
+        {
+          "id": 9,
+          "name": "blastoise"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "pidgey",
+      "is_default": true,
+      "species": [
+        {
+          "id": 16,
+          "name": "pidgey"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "pidgeotto",
+      "is_default": true,
+      "species": [
+        {
+          "id": 17,
+          "name": "pidgeotto"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "pidgeot",
+      "is_default": true,
+      "species": [
+        {
+          "id": 18,
+          "name": "pidgeot"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "rattata",
+      "is_default": true,
+      "species": [
+        {
+          "id": 19,
+          "name": "rattata"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "raticate",
+      "is_default": true,
+      "species": [
+        {
+          "id": 20,
+          "name": "raticate"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "name": "growlithe",
+      "is_default": true,
+      "species": [
+        {
+          "id": 58,
+          "name": "growlithe"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "arcanine",
+      "is_default": true,
+      "species": [
+        {
+          "id": 59,
+          "name": "arcanine"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "name": "abra",
+      "is_default": true,
+      "species": [
+        {
+          "id": 63,
+          "name": "abra"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "name": "kadabra",
+      "is_default": true,
+      "species": [
+        {
+          "id": 64,
+          "name": "kadabra"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "name": "alakazam",
+      "is_default": true,
+      "species": [
+        {
+          "id": 65,
+          "name": "alakazam"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "name": "exeggcute",
+      "is_default": true,
+      "species": [
+        {
+          "id": 102,
+          "name": "exeggcute"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "name": "exeggutor",
+      "is_default": true,
+      "species": [
+        {
+          "id": 103,
+          "name": "exeggutor"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "name": "rhyhorn",
+      "is_default": true,
+      "species": [
+        {
+          "id": 111,
+          "name": "rhyhorn"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "name": "rhydon",
+      "is_default": true,
+      "species": [
+        {
+          "id": 112,
+          "name": "rhydon"
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "name": "gyarados",
+      "is_default": true,
+      "species": [
+        {
+          "id": 130,
+          "name": "gyarados"
+        }
+      ]
+    }
+  ],
+  "species": [
+    {
+      "id": 1,
+      "name": "bulbasaur"
+    },
+    {
+      "id": 2,
+      "name": "ivysaur"
+    },
+    {
+      "id": 3,
+      "name": "venusaur"
+    },
+    {
+      "id": 4,
+      "name": "charmander"
+    },
+    {
+      "id": 5,
+      "name": "charmeleon"
+    },
+    {
+      "id": 6,
+      "name": "charizard"
+    },
+    {
+      "id": 7,
+      "name": "squirtle"
+    },
+    {
+      "id": 8,
+      "name": "wartortle"
+    },
+    {
+      "id": 9,
+      "name": "blastoise"
+    },
+    {
+      "id": 16,
+      "name": "pidgey"
+    },
+    {
+      "id": 17,
+      "name": "pidgeotto"
+    },
+    {
+      "id": 18,
+      "name": "pidgeot"
+    },
+    {
+      "id": 19,
+      "name": "rattata"
+    },
+    {
+      "id": 20,
+      "name": "raticate"
+    },
+    {
+      "id": 58,
+      "name": "growlithe"
+    },
+    {
+      "id": 59,
+      "name": "arcanine"
+    },
+    {
+      "id": 63,
+      "name": "abra"
+    },
+    {
+      "id": 64,
+      "name": "kadabra"
+    },
+    {
+      "id": 65,
+      "name": "alakazam"
+    },
+    {
+      "id": 102,
+      "name": "exeggcute"
+    },
+    {
+      "id": 103,
+      "name": "exeggutor"
+    },
+    {
+      "id": 111,
+      "name": "rhyhorn"
+    },
+    {
+      "id": 112,
+      "name": "rhydon"
+    },
+    {
+      "id": 130,
+      "name": "gyarados"
+    }
+  ],
+  "moves": [
+    {
+      "id": 10,
+      "name": "scratch"
+    },
+    {
+      "id": 16,
+      "name": "gust"
+    },
+    {
+      "id": 17,
+      "name": "wing-attack"
+    },
+    {
+      "id": 18,
+      "name": "whirlwind"
+    },
+    {
+      "id": 22,
+      "name": "vine-whip"
+    },
+    {
+      "id": 23,
+      "name": "stomp"
+    },
+    {
+      "id": 28,
+      "name": "sand-attack"
+    },
+    {
+      "id": 31,
+      "name": "fury-attack"
+    },
+    {
+      "id": 32,
+      "name": "horn-drill"
+    },
+    {
+      "id": 33,
+      "name": "tackle"
+    },
+    {
+      "id": 36,
+      "name": "take-down"
+    },
+    {
+      "id": 39,
+      "name": "tail-whip"
+    },
+    {
+      "id": 43,
+      "name": "leer"
+    },
+    {
+      "id": 44,
+      "name": "bite"
+    },
+    {
+      "id": 45,
+      "name": "growl"
+    },
+    {
+      "id": 46,
+      "name": "roar"
+    },
+    {
+      "id": 50,
+      "name": "disable"
+    },
+    {
+      "id": 52,
+      "name": "ember"
+    },
+    {
+      "id": 53,
+      "name": "flamethrower"
+    },
+    {
+      "id": 55,
+      "name": "water-gun"
+    },
+    {
+      "id": 56,
+      "name": "hydro-pump"
+    },
+    {
+      "id": 59,
+      "name": "blizzard"
+    },
+    {
+      "id": 60,
+      "name": "psybeam"
+    },
+    {
+      "id": 63,
+      "name": "hyper-beam"
+    },
+    {
+      "id": 72,
+      "name": "mega-drain"
+    },
+    {
+      "id": 73,
+      "name": "leech-seed"
+    },
+    {
+      "id": 74,
+      "name": "growth"
+    },
+    {
+      "id": 75,
+      "name": "razor-leaf"
+    },
+    {
+      "id": 76,
+      "name": "solar-beam"
+    },
+    {
+      "id": 77,
+      "name": "poison-powder"
+    },
+    {
+      "id": 78,
+      "name": "stun-spore"
+    },
+    {
+      "id": 82,
+      "name": "dragon-rage"
+    },
+    {
+      "id": 83,
+      "name": "fire-spin"
+    },
+    {
+      "id": 93,
+      "name": "confusion"
+    },
+    {
+      "id": 94,
+      "name": "psychic"
+    },
+    {
+      "id": 95,
+      "name": "hypnosis"
+    },
+    {
+      "id": 97,
+      "name": "agility"
+    },
+    {
+      "id": 98,
+      "name": "quick-attack"
+    },
+    {
+      "id": 99,
+      "name": "rage"
+    },
+    {
+      "id": 100,
+      "name": "teleport"
+    },
+    {
+      "id": 105,
+      "name": "recover"
+    },
+    {
+      "id": 110,
+      "name": "withdraw"
+    },
+    {
+      "id": 115,
+      "name": "reflect"
+    },
+    {
+      "id": 119,
+      "name": "mirror-move"
+    },
+    {
+      "id": 126,
+      "name": "fire-blast"
+    },
+    {
+      "id": 130,
+      "name": "skull-bash"
+    },
+    {
+      "id": 140,
+      "name": "barrage"
+    },
+    {
+      "id": 143,
+      "name": "sky-attack"
+    },
+    {
+      "id": 145,
+      "name": "bubble"
+    },
+    {
+      "id": 158,
+      "name": "hyper-fang"
+    },
+    {
+      "id": 163,
+      "name": "slash"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "canalave-city"
+    },
+    {
+      "id": 2,
+      "name": "eterna-city"
+    },
+    {
+      "id": 3,
+      "name": "pastoria-city"
+    },
+    {
+      "id": 4,
+      "name": "sunyshore-city"
+    },
+    {
+      "id": 5,
+      "name": "sinnoh-pokemon-league"
+    },
+    {
+      "id": 6,
+      "name": "oreburgh-mine"
+    },
+    {
+      "id": 7,
+      "name": "valley-windworks"
+    },
+    {
+      "id": 8,
+      "name": "eterna-forest"
+    },
+    {
+      "id": 9,
+      "name": "fuego-ironworks"
+    },
+    {
+      "id": 10,
+      "name": "mt-coronet"
+    },
+    {
+      "id": 11,
+      "name": "great-marsh"
+    },
+    {
+      "id": 12,
+      "name": "solaceon-ruins"
+    },
+    {
+      "id": 13,
+      "name": "sinnoh-victory-road"
+    },
+    {
+      "id": 14,
+      "name": "ravaged-path"
+    },
+    {
+      "id": 15,
+      "name": "oreburgh-gate"
+    },
+    {
+      "id": 16,
+      "name": "stark-mountain"
+    },
+    {
+      "id": 18,
+      "name": "turnback-cave"
+    },
+    {
+      "id": 19,
+      "name": "snowpoint-temple"
+    },
+    {
+      "id": 20,
+      "name": "wayward-cave"
+    },
+    {
+      "id": 22,
+      "name": "ruin-maniac-cave"
+    },
+    {
+      "id": 23,
+      "name": "trophy-garden"
+    },
+    {
+      "id": 24,
+      "name": "iron-island"
+    },
+    {
+      "id": 25,
+      "name": "old-chateau"
+    },
+    {
+      "id": 26,
+      "name": "lake-verity"
+    },
+    {
+      "id": 27,
+      "name": "lake-valor"
+    },
+    {
+      "id": 28,
+      "name": "lake-acuity"
+    },
+    {
+      "id": 29,
+      "name": "valor-lakefront"
+    },
+    {
+      "id": 30,
+      "name": "acuity-lakefront"
+    },
+    {
+      "id": 31,
+      "name": "sinnoh-route-201"
+    },
+    {
+      "id": 32,
+      "name": "sinnoh-route-202"
+    },
+    {
+      "id": 33,
+      "name": "sinnoh-route-203"
+    },
+    {
+      "id": 34,
+      "name": "sinnoh-route-204"
+    },
+    {
+      "id": 35,
+      "name": "sinnoh-route-205"
+    },
+    {
+      "id": 36,
+      "name": "sinnoh-route-206"
+    },
+    {
+      "id": 37,
+      "name": "sinnoh-route-207"
+    },
+    {
+      "id": 38,
+      "name": "sinnoh-route-208"
+    },
+    {
+      "id": 39,
+      "name": "sinnoh-route-209"
+    },
+    {
+      "id": 40,
+      "name": "lost-tower"
+    },
+    {
+      "id": 41,
+      "name": "sinnoh-route-210"
+    },
+    {
+      "id": 42,
+      "name": "sinnoh-route-211"
+    },
+    {
+      "id": 43,
+      "name": "sinnoh-route-212"
+    },
+    {
+      "id": 44,
+      "name": "sinnoh-route-213"
+    },
+    {
+      "id": 45,
+      "name": "sinnoh-route-214"
+    },
+    {
+      "id": 46,
+      "name": "sinnoh-route-215"
+    },
+    {
+      "id": 47,
+      "name": "sinnoh-route-216"
+    },
+    {
+      "id": 48,
+      "name": "sinnoh-route-217"
+    },
+    {
+      "id": 49,
+      "name": "sinnoh-route-218"
+    },
+    {
+      "id": 50,
+      "name": "sinnoh-route-219"
+    },
+    {
+      "id": 51,
+      "name": "sinnoh-route-221"
+    },
+    {
+      "id": 52,
+      "name": "sinnoh-route-222"
+    },
+    {
+      "id": 53,
+      "name": "sinnoh-route-224"
+    },
+    {
+      "id": 54,
+      "name": "sinnoh-route-225"
+    },
+    {
+      "id": 55,
+      "name": "sinnoh-route-227"
+    },
+    {
+      "id": 56,
+      "name": "sinnoh-route-228"
+    },
+    {
+      "id": 57,
+      "name": "sinnoh-route-229"
+    },
+    {
+      "id": 58,
+      "name": "twinleaf-town"
+    },
+    {
+      "id": 59,
+      "name": "celestic-town"
+    },
+    {
+      "id": 60,
+      "name": "resort-area"
+    },
+    {
+      "id": 61,
+      "name": "sinnoh-sea-route-220"
+    },
+    {
+      "id": 62,
+      "name": "sinnoh-sea-route-223"
+    },
+    {
+      "id": 63,
+      "name": "sinnoh-sea-route-226"
+    },
+    {
+      "id": 64,
+      "name": "sinnoh-sea-route-230"
+    },
+    {
+      "id": 65,
+      "name": "blackthorn-city"
+    },
+    {
+      "id": 66,
+      "name": "burned-tower"
+    },
+    {
+      "id": 67,
+      "name": "celadon-city"
+    },
+    {
+      "id": 68,
+      "name": "cerulean-city"
+    },
+    {
+      "id": 69,
+      "name": "cherrygrove-city"
+    },
+    {
+      "id": 70,
+      "name": "cianwood-city"
+    },
+    {
+      "id": 71,
+      "name": "cinnabar-island"
+    },
+    {
+      "id": 72,
+      "name": "dark-cave"
+    },
+    {
+      "id": 73,
+      "name": "digletts-cave"
+    },
+    {
+      "id": 74,
+      "name": "dragons-den"
+    },
+    {
+      "id": 75,
+      "name": "ecruteak-city"
+    },
+    {
+      "id": 76,
+      "name": "fuchsia-city"
+    },
+    {
+      "id": 77,
+      "name": "ice-path"
+    },
+    {
+      "id": 78,
+      "name": "ilex-forest"
+    },
+    {
+      "id": 79,
+      "name": "lake-of-rage"
+    },
+    {
+      "id": 80,
+      "name": "mt-moon"
+    },
+    {
+      "id": 81,
+      "name": "mt-mortar"
+    },
+    {
+      "id": 82,
+      "name": "mt-silver"
+    },
+    {
+      "id": 83,
+      "name": "national-park"
+    },
+    {
+      "id": 84,
+      "name": "new-bark-town"
+    },
+    {
+      "id": 85,
+      "name": "olivine-city"
+    },
+    {
+      "id": 86,
+      "name": "pallet-town"
+    },
+    {
+      "id": 87,
+      "name": "rock-tunnel"
+    },
+    {
+      "id": 88,
+      "name": "kanto-route-1"
+    },
+    {
+      "id": 89,
+      "name": "kanto-route-10"
+    },
+    {
+      "id": 90,
+      "name": "kanto-route-11"
+    },
+    {
+      "id": 91,
+      "name": "kanto-route-12"
+    },
+    {
+      "id": 92,
+      "name": "kanto-route-13"
+    },
+    {
+      "id": 93,
+      "name": "kanto-route-14"
+    },
+    {
+      "id": 94,
+      "name": "kanto-route-15"
+    },
+    {
+      "id": 95,
+      "name": "kanto-route-16"
+    },
+    {
+      "id": 96,
+      "name": "kanto-route-17"
+    },
+    {
+      "id": 97,
+      "name": "kanto-route-18"
+    },
+    {
+      "id": 98,
+      "name": "kanto-sea-route-19"
+    },
+    {
+      "id": 99,
+      "name": "kanto-route-2"
+    },
+    {
+      "id": 100,
+      "name": "kanto-sea-route-20"
+    },
+    {
+      "id": 101,
+      "name": "kanto-sea-route-21"
+    },
+    {
+      "id": 102,
+      "name": "kanto-route-22"
+    },
+    {
+      "id": 103,
+      "name": "kanto-route-24"
+    },
+    {
+      "id": 104,
+      "name": "kanto-route-25"
+    },
+    {
+      "id": 105,
+      "name": "kanto-route-26"
+    },
+    {
+      "id": 106,
+      "name": "kanto-route-27"
+    },
+    {
+      "id": 107,
+      "name": "kanto-route-28"
+    },
+    {
+      "id": 108,
+      "name": "johto-route-29"
+    },
+    {
+      "id": 109,
+      "name": "kanto-route-3"
+    },
+    {
+      "id": 110,
+      "name": "johto-route-30"
+    },
+    {
+      "id": 111,
+      "name": "johto-route-31"
+    },
+    {
+      "id": 112,
+      "name": "johto-route-32"
+    },
+    {
+      "id": 113,
+      "name": "johto-route-33"
+    },
+    {
+      "id": 114,
+      "name": "johto-route-34"
+    },
+    {
+      "id": 115,
+      "name": "johto-route-35"
+    },
+    {
+      "id": 116,
+      "name": "johto-route-36"
+    },
+    {
+      "id": 117,
+      "name": "johto-route-37"
+    },
+    {
+      "id": 118,
+      "name": "johto-route-38"
+    },
+    {
+      "id": 119,
+      "name": "johto-route-39"
+    },
+    {
+      "id": 120,
+      "name": "kanto-route-4"
+    },
+    {
+      "id": 121,
+      "name": "johto-sea-route-40"
+    },
+    {
+      "id": 122,
+      "name": "johto-sea-route-41"
+    },
+    {
+      "id": 123,
+      "name": "johto-route-42"
+    },
+    {
+      "id": 124,
+      "name": "johto-route-43"
+    },
+    {
+      "id": 125,
+      "name": "johto-route-44"
+    },
+    {
+      "id": 126,
+      "name": "johto-route-45"
+    },
+    {
+      "id": 127,
+      "name": "johto-route-46"
+    },
+    {
+      "id": 128,
+      "name": "johto-route-47"
+    },
+    {
+      "id": 129,
+      "name": "johto-route-48"
+    },
+    {
+      "id": 130,
+      "name": "kanto-route-5"
+    },
+    {
+      "id": 131,
+      "name": "kanto-route-6"
+    },
+    {
+      "id": 132,
+      "name": "kanto-route-7"
+    },
+    {
+      "id": 133,
+      "name": "kanto-route-8"
+    },
+    {
+      "id": 134,
+      "name": "kanto-route-9"
+    },
+    {
+      "id": 135,
+      "name": "ruins-of-alph"
+    },
+    {
+      "id": 136,
+      "name": "seafoam-islands"
+    },
+    {
+      "id": 137,
+      "name": "slowpoke-well"
+    },
+    {
+      "id": 138,
+      "name": "sprout-tower"
+    },
+    {
+      "id": 139,
+      "name": "bell-tower"
+    },
+    {
+      "id": 140,
+      "name": "tohjo-falls"
+    },
+    {
+      "id": 141,
+      "name": "union-cave"
+    },
+    {
+      "id": 147,
+      "name": "cerulean-cave"
+    },
+    {
+      "id": 148,
+      "name": "unknown-all-poliwag"
+    },
+    {
+      "id": 149,
+      "name": "unknown-all-rattata"
+    },
+    {
+      "id": 150,
+      "name": "unknown-all-bugs"
+    },
+    {
+      "id": 151,
+      "name": "vermilion-city"
+    },
+    {
+      "id": 152,
+      "name": "kanto-victory-road-1"
+    },
+    {
+      "id": 153,
+      "name": "violet-city"
+    },
+    {
+      "id": 154,
+      "name": "viridian-city"
+    },
+    {
+      "id": 155,
+      "name": "viridian-forest"
+    },
+    {
+      "id": 156,
+      "name": "whirl-islands"
+    },
+    {
+      "id": 157,
+      "name": "kanto-route-23"
+    },
+    {
+      "id": 158,
+      "name": "kanto-power-plant"
+    },
+    {
+      "id": 159,
+      "name": "kanto-victory-road-2"
+    },
+    {
+      "id": 160,
+      "name": "pokemon-tower"
+    },
+    {
+      "id": 161,
+      "name": "pokemon-mansion"
+    },
+    {
+      "id": 162,
+      "name": "kanto-safari-zone"
+    },
+    {
+      "id": 168,
+      "name": "oreburgh-city"
+    },
+    {
+      "id": 169,
+      "name": "hearthome-city"
+    },
+    {
+      "id": 170,
+      "name": "veilstone-city"
+    },
+    {
+      "id": 171,
+      "name": "snowpoint-city"
+    },
+    {
+      "id": 172,
+      "name": "spear-pillar"
+    },
+    {
+      "id": 175,
+      "name": "floaroma-meadow"
+    },
+    {
+      "id": 178,
+      "name": "sendoff-spring"
+    },
+    {
+      "id": 179,
+      "name": "flower-paradise"
+    },
+    {
+      "id": 180,
+      "name": "maniac-tunnel"
+    },
+    {
+      "id": 183,
+      "name": "newmoon-island"
+    },
+    {
+      "id": 188,
+      "name": "sinnoh-hall-of-origin-1"
+    },
+    {
+      "id": 196,
+      "name": "trainers-school"
+    },
+    {
+      "id": 219,
+      "name": "distortion-world"
+    },
+    {
+      "id": 228,
+      "name": "azalea-town"
+    },
+    {
+      "id": 229,
+      "name": "goldenrod-city"
+    },
+    {
+      "id": 231,
+      "name": "pewter-city"
+    },
+    {
+      "id": 232,
+      "name": "lavender-town"
+    },
+    {
+      "id": 233,
+      "name": "indigo-plateau"
+    },
+    {
+      "id": 234,
+      "name": "saffron-city"
+    },
+    {
+      "id": 237,
+      "name": "team-rocket-hq"
+    },
+    {
+      "id": 243,
+      "name": "safari-zone-gate"
+    },
+    {
+      "id": 247,
+      "name": "sinjoh-ruins"
+    },
+    {
+      "id": 248,
+      "name": "embedded-tower"
+    },
+    {
+      "id": 346,
+      "name": "nuvema-town"
+    },
+    {
+      "id": 347,
+      "name": "accumula-town"
+    },
+    {
+      "id": 348,
+      "name": "striaton-city"
+    },
+    {
+      "id": 349,
+      "name": "nacrene-city"
+    },
+    {
+      "id": 350,
+      "name": "castelia-city"
+    },
+    {
+      "id": 352,
+      "name": "driftveil-city"
+    },
+    {
+      "id": 354,
+      "name": "icirrus-city"
+    },
+    {
+      "id": 356,
+      "name": "unova-route-1"
+    },
+    {
+      "id": 357,
+      "name": "unova-route-2"
+    },
+    {
+      "id": 358,
+      "name": "unova-route-3"
+    },
+    {
+      "id": 359,
+      "name": "unova-route-4"
+    },
+    {
+      "id": 360,
+      "name": "unova-route-5"
+    },
+    {
+      "id": 361,
+      "name": "unova-route-6"
+    },
+    {
+      "id": 362,
+      "name": "unova-route-7"
+    },
+    {
+      "id": 363,
+      "name": "unova-route-8"
+    },
+    {
+      "id": 364,
+      "name": "unova-route-9"
+    },
+    {
+      "id": 365,
+      "name": "unova-route-10"
+    },
+    {
+      "id": 366,
+      "name": "unova-route-11"
+    },
+    {
+      "id": 367,
+      "name": "unova-route-12"
+    },
+    {
+      "id": 368,
+      "name": "unova-route-13"
+    },
+    {
+      "id": 369,
+      "name": "unova-route-14"
+    },
+    {
+      "id": 370,
+      "name": "unova-route-15"
+    },
+    {
+      "id": 371,
+      "name": "unova-route-16"
+    },
+    {
+      "id": 372,
+      "name": "unova-route-17"
+    },
+    {
+      "id": 373,
+      "name": "unova-route-18"
+    },
+    {
+      "id": 374,
+      "name": "dreamyard"
+    },
+    {
+      "id": 375,
+      "name": "pinwheel-forest"
+    },
+    {
+      "id": 376,
+      "name": "desert-resort"
+    },
+    {
+      "id": 377,
+      "name": "relic-castle"
+    },
+    {
+      "id": 378,
+      "name": "cold-storage"
+    },
+    {
+      "id": 379,
+      "name": "chargestone-cave"
+    },
+    {
+      "id": 380,
+      "name": "twist-mountain"
+    },
+    {
+      "id": 381,
+      "name": "dragonspiral-tower"
+    },
+    {
+      "id": 382,
+      "name": "unova-victory-road"
+    },
+    {
+      "id": 384,
+      "name": "undella-town"
+    },
+    {
+      "id": 387,
+      "name": "ns-castle"
+    },
+    {
+      "id": 395,
+      "name": "wellspring-cave"
+    },
+    {
+      "id": 396,
+      "name": "mistralton-cave"
+    },
+    {
+      "id": 398,
+      "name": "celestial-tower"
+    },
+    {
+      "id": 399,
+      "name": "moor-of-icirrus"
+    },
+    {
+      "id": 401,
+      "name": "challengers-cave"
+    },
+    {
+      "id": 403,
+      "name": "giant-chasm"
+    },
+    {
+      "id": 404,
+      "name": "liberty-garden"
+    },
+    {
+      "id": 405,
+      "name": "p2-laboratory"
+    },
+    {
+      "id": 407,
+      "name": "driftveil-drawbridge"
+    },
+    {
+      "id": 409,
+      "name": "village-bridge"
+    },
+    {
+      "id": 410,
+      "name": "marvelous-bridge"
+    },
+    {
+      "id": 412,
+      "name": "abundant-shrine"
+    },
+    {
+      "id": 413,
+      "name": "undella-bay"
+    },
+    {
+      "id": 414,
+      "name": "lostlorn-forest"
+    },
+    {
+      "id": 415,
+      "name": "trial-chamber"
+    },
+    {
+      "id": 416,
+      "name": "guidance-chamber"
+    },
+    {
+      "id": 429,
+      "name": "petalburg-city"
+    },
+    {
+      "id": 430,
+      "name": "slateport-city"
+    },
+    {
+      "id": 431,
+      "name": "lilycove-city"
+    },
+    {
+      "id": 432,
+      "name": "mossdeep-city"
+    },
+    {
+      "id": 433,
+      "name": "sootopolis-city"
+    },
+    {
+      "id": 434,
+      "name": "ever-grande-city"
+    },
+    {
+      "id": 435,
+      "name": "meteor-falls"
+    },
+    {
+      "id": 436,
+      "name": "rusturf-tunnel"
+    },
+    {
+      "id": 437,
+      "name": "granite-cave"
+    },
+    {
+      "id": 438,
+      "name": "petalburg-woods"
+    },
+    {
+      "id": 439,
+      "name": "jagged-pass"
+    },
+    {
+      "id": 440,
+      "name": "fiery-path"
+    },
+    {
+      "id": 441,
+      "name": "mt-pyre"
+    },
+    {
+      "id": 442,
+      "name": "seafloor-cavern"
+    },
+    {
+      "id": 443,
+      "name": "cave-of-origin"
+    },
+    {
+      "id": 444,
+      "name": "hoenn-victory-road"
+    },
+    {
+      "id": 445,
+      "name": "shoal-cave"
+    },
+    {
+      "id": 446,
+      "name": "new-mauville"
+    },
+    {
+      "id": 447,
+      "name": "abandoned-ship"
+    },
+    {
+      "id": 448,
+      "name": "sky-pillar"
+    },
+    {
+      "id": 449,
+      "name": "hoenn-route-101"
+    },
+    {
+      "id": 450,
+      "name": "hoenn-route-102"
+    },
+    {
+      "id": 451,
+      "name": "hoenn-route-103"
+    },
+    {
+      "id": 452,
+      "name": "hoenn-route-104"
+    },
+    {
+      "id": 453,
+      "name": "hoenn-route-105"
+    },
+    {
+      "id": 454,
+      "name": "hoenn-route-106"
+    },
+    {
+      "id": 455,
+      "name": "hoenn-route-107"
+    },
+    {
+      "id": 456,
+      "name": "hoenn-route-108"
+    },
+    {
+      "id": 457,
+      "name": "hoenn-route-109"
+    },
+    {
+      "id": 458,
+      "name": "hoenn-route-110"
+    },
+    {
+      "id": 459,
+      "name": "hoenn-route-111"
+    },
+    {
+      "id": 460,
+      "name": "hoenn-route-112"
+    },
+    {
+      "id": 461,
+      "name": "hoenn-route-113"
+    },
+    {
+      "id": 462,
+      "name": "hoenn-route-114"
+    },
+    {
+      "id": 463,
+      "name": "hoenn-route-115"
+    },
+    {
+      "id": 464,
+      "name": "hoenn-route-116"
+    },
+    {
+      "id": 465,
+      "name": "hoenn-route-117"
+    },
+    {
+      "id": 466,
+      "name": "hoenn-route-118"
+    },
+    {
+      "id": 467,
+      "name": "hoenn-route-119"
+    },
+    {
+      "id": 468,
+      "name": "hoenn-route-120"
+    },
+    {
+      "id": 469,
+      "name": "hoenn-route-121"
+    },
+    {
+      "id": 470,
+      "name": "hoenn-route-122"
+    },
+    {
+      "id": 471,
+      "name": "hoenn-route-123"
+    },
+    {
+      "id": 472,
+      "name": "hoenn-route-124"
+    },
+    {
+      "id": 473,
+      "name": "hoenn-route-125"
+    },
+    {
+      "id": 474,
+      "name": "hoenn-route-126"
+    },
+    {
+      "id": 475,
+      "name": "hoenn-route-127"
+    },
+    {
+      "id": 476,
+      "name": "hoenn-route-128"
+    },
+    {
+      "id": 477,
+      "name": "hoenn-route-129"
+    },
+    {
+      "id": 478,
+      "name": "hoenn-route-130"
+    },
+    {
+      "id": 479,
+      "name": "hoenn-route-131"
+    },
+    {
+      "id": 480,
+      "name": "hoenn-route-132"
+    },
+    {
+      "id": 481,
+      "name": "hoenn-route-133"
+    },
+    {
+      "id": 482,
+      "name": "hoenn-route-134"
+    },
+    {
+      "id": 483,
+      "name": "hoenn-safari-zone"
+    },
+    {
+      "id": 484,
+      "name": "dewford-town"
+    },
+    {
+      "id": 485,
+      "name": "pacifidlog-town"
+    },
+    {
+      "id": 486,
+      "name": "magma-hideout"
+    },
+    {
+      "id": 487,
+      "name": "mirage-tower"
+    },
+    {
+      "id": 488,
+      "name": "desert-underpass"
+    },
+    {
+      "id": 489,
+      "name": "artisan-cave"
+    },
+    {
+      "id": 490,
+      "name": "hoenn-altering-cave"
+    },
+    {
+      "id": 491,
+      "name": "monean-chamber"
+    },
+    {
+      "id": 492,
+      "name": "liptoo-chamber"
+    },
+    {
+      "id": 493,
+      "name": "weepth-chamber"
+    },
+    {
+      "id": 494,
+      "name": "dilford-chamber"
+    },
+    {
+      "id": 495,
+      "name": "scufib-chamber"
+    },
+    {
+      "id": 496,
+      "name": "rixy-chamber"
+    },
+    {
+      "id": 497,
+      "name": "viapos-chamber"
+    },
+    {
+      "id": 498,
+      "name": "ss-anne"
+    },
+    {
+      "id": 500,
+      "name": "mt-ember"
+    },
+    {
+      "id": 501,
+      "name": "berry-forest"
+    },
+    {
+      "id": 502,
+      "name": "icefall-cave"
+    },
+    {
+      "id": 503,
+      "name": "pattern-bush"
+    },
+    {
+      "id": 504,
+      "name": "lost-cave"
+    },
+    {
+      "id": 505,
+      "name": "kindle-road"
+    },
+    {
+      "id": 506,
+      "name": "treasure-beach"
+    },
+    {
+      "id": 507,
+      "name": "cape-brink"
+    },
+    {
+      "id": 508,
+      "name": "bond-bridge"
+    },
+    {
+      "id": 509,
+      "name": "three-isle-port"
+    },
+    {
+      "id": 510,
+      "name": "resort-gorgeous"
+    },
+    {
+      "id": 511,
+      "name": "water-labyrinth"
+    },
+    {
+      "id": 512,
+      "name": "five-isle-meadow"
+    },
+    {
+      "id": 513,
+      "name": "memorial-pillar"
+    },
+    {
+      "id": 514,
+      "name": "outcast-island"
+    },
+    {
+      "id": 515,
+      "name": "green-path"
+    },
+    {
+      "id": 516,
+      "name": "water-path"
+    },
+    {
+      "id": 517,
+      "name": "ruin-valley"
+    },
+    {
+      "id": 518,
+      "name": "trainer-tower"
+    },
+    {
+      "id": 519,
+      "name": "canyon-entrance"
+    },
+    {
+      "id": 520,
+      "name": "sevault-canyon"
+    },
+    {
+      "id": 521,
+      "name": "tanoby-ruins"
+    },
+    {
+      "id": 526,
+      "name": "one-island"
+    },
+    {
+      "id": 527,
+      "name": "four-island"
+    },
+    {
+      "id": 528,
+      "name": "five-island"
+    },
+    {
+      "id": 529,
+      "name": "kanto-altering-cave"
+    },
+    {
+      "id": 531,
+      "name": "aspertia-city"
+    },
+    {
+      "id": 532,
+      "name": "virbank-city"
+    },
+    {
+      "id": 533,
+      "name": "humilau-city"
+    },
+    {
+      "id": 536,
+      "name": "floccesy-town"
+    },
+    {
+      "id": 538,
+      "name": "unova-route-19"
+    },
+    {
+      "id": 539,
+      "name": "unova-route-20"
+    },
+    {
+      "id": 540,
+      "name": "unova-route-21"
+    },
+    {
+      "id": 541,
+      "name": "unova-route-22"
+    },
+    {
+      "id": 542,
+      "name": "unova-route-23"
+    },
+    {
+      "id": 543,
+      "name": "castelia-sewers"
+    },
+    {
+      "id": 544,
+      "name": "floccesy-ranch"
+    },
+    {
+      "id": 545,
+      "name": "virbank-complex"
+    },
+    {
+      "id": 546,
+      "name": "reversal-mountain"
+    },
+    {
+      "id": 547,
+      "name": "strange-house"
+    },
+    {
+      "id": 548,
+      "name": "unova-victory-road-2"
+    },
+    {
+      "id": 550,
+      "name": "relic-passage"
+    },
+    {
+      "id": 551,
+      "name": "clay-tunnel"
+    },
+    {
+      "id": 554,
+      "name": "seaside-cave"
+    },
+    {
+      "id": 560,
+      "name": "nature-sanctuary"
+    },
+    {
+      "id": 562,
+      "name": "underground-ruins"
+    },
+    {
+      "id": 563,
+      "name": "rocky-mountain-room"
+    },
+    {
+      "id": 564,
+      "name": "glacier-room"
+    },
+    {
+      "id": 565,
+      "name": "iron-room"
+    },
+    {
+      "id": 567,
+      "name": "littleroot-town"
+    },
+    {
+      "id": 569,
+      "name": "lavaridge-town"
+    },
+    {
+      "id": 570,
+      "name": "fallarbor-town"
+    },
+    {
+      "id": 571,
+      "name": "verdanturf-town"
+    },
+    {
+      "id": 573,
+      "name": "rustboro-city"
+    },
+    {
+      "id": 574,
+      "name": "fortree-city"
+    },
+    {
+      "id": 577,
+      "name": "mirage-spot-island"
+    },
+    {
+      "id": 578,
+      "name": "southern-island"
+    },
+    {
+      "id": 580,
+      "name": "scorched-slab"
+    },
+    {
+      "id": 581,
+      "name": "island-cave"
+    },
+    {
+      "id": 582,
+      "name": "desert-ruins"
+    },
+    {
+      "id": 583,
+      "name": "ancient-tomb"
+    },
+    {
+      "id": 590,
+      "name": "aquacorde-town"
+    },
+    {
+      "id": 591,
+      "name": "kalos-route-2"
+    },
+    {
+      "id": 593,
+      "name": "santalune-forest"
+    },
+    {
+      "id": 594,
+      "name": "kalos-route-3"
+    },
+    {
+      "id": 597,
+      "name": "kalos-route-4"
+    },
+    {
+      "id": 599,
+      "name": "lumiose-city"
+    },
+    {
+      "id": 602,
+      "name": "kalos-route-5"
+    },
+    {
+      "id": 606,
+      "name": "kalos-route-6"
+    },
+    {
+      "id": 608,
+      "name": "parfum-palace"
+    },
+    {
+      "id": 609,
+      "name": "kalos-route-7"
+    },
+    {
+      "id": 611,
+      "name": "cyllage-city"
+    },
+    {
+      "id": 612,
+      "name": "kalos-route-8"
+    },
+    {
+      "id": 614,
+      "name": "ambrette-town"
+    },
+    {
+      "id": 615,
+      "name": "kalos-route-9"
+    },
+    {
+      "id": 618,
+      "name": "kalos-route-10"
+    },
+    {
+      "id": 621,
+      "name": "kalos-route-11"
+    },
+    {
+      "id": 623,
+      "name": "reflection-cave"
+    },
+    {
+      "id": 624,
+      "name": "shalour-city"
+    },
+    {
+      "id": 625,
+      "name": "tower-of-mastery"
+    },
+    {
+      "id": 626,
+      "name": "kalos-route-12"
+    },
+    {
+      "id": 629,
+      "name": "kalos-route-13"
+    },
+    {
+      "id": 631,
+      "name": "kalos-route-14"
+    },
+    {
+      "id": 633,
+      "name": "laverre-city"
+    },
+    {
+      "id": 635,
+      "name": "kalos-route-15"
+    },
+    {
+      "id": 638,
+      "name": "kalos-route-16"
+    },
+    {
+      "id": 640,
+      "name": "frost-cavern"
+    },
+    {
+      "id": 641,
+      "name": "kalos-route-17"
+    },
+    {
+      "id": 644,
+      "name": "kalos-route-18"
+    },
+    {
+      "id": 646,
+      "name": "couriway-town"
+    },
+    {
+      "id": 647,
+      "name": "kalos-route-19"
+    },
+    {
+      "id": 650,
+      "name": "kalos-route-20"
+    },
+    {
+      "id": 652,
+      "name": "pokemon-village"
+    },
+    {
+      "id": 653,
+      "name": "kalos-route-21"
+    },
+    {
+      "id": 655,
+      "name": "kalos-route-22"
+    },
+    {
+      "id": 657,
+      "name": "kalos-victory-road"
+    },
+    {
+      "id": 661,
+      "name": "azure-bay"
+    },
+    {
+      "id": 671,
+      "name": "glittering-cave"
+    },
+    {
+      "id": 672,
+      "name": "connecting-cave"
+    },
+    {
+      "id": 675,
+      "name": "team-flare-secret-hq"
+    },
+    {
+      "id": 676,
+      "name": "terminus-cave"
+    },
+    {
+      "id": 677,
+      "name": "lost-hotel"
+    },
+    {
+      "id": 679,
+      "name": "sea-spirits-den"
+    },
+    {
+      "id": 680,
+      "name": "friend-safari"
+    },
+    {
+      "id": 690,
+      "name": "unknown-dungeon"
+    },
+    {
+      "id": 692,
+      "name": "team-aqua-hideout"
+    },
+    {
+      "id": 693,
+      "name": "sea-mauville"
+    },
+    {
+      "id": 694,
+      "name": "team-magma-hideout"
+    },
+    {
+      "id": 695,
+      "name": "battle-resort"
+    },
+    {
+      "id": 697,
+      "name": "mirage-spot-forest"
+    },
+    {
+      "id": 698,
+      "name": "mirage-spot-cave"
+    },
+    {
+      "id": 699,
+      "name": "mirage-spot-mountain"
+    },
+    {
+      "id": 700,
+      "name": "trackless-forest"
+    },
+    {
+      "id": 701,
+      "name": "pathless-plain"
+    },
+    {
+      "id": 702,
+      "name": "nameless-cavern"
+    },
+    {
+      "id": 703,
+      "name": "fabled-cave"
+    },
+    {
+      "id": 704,
+      "name": "gnarled-den"
+    },
+    {
+      "id": 705,
+      "name": "crescent-isle"
+    },
+    {
+      "id": 707,
+      "name": "soaring-in-the-sky"
+    },
+    {
+      "id": 711,
+      "name": "alola-route-1"
+    },
+    {
+      "id": 712,
+      "name": "alola-route-3"
+    },
+    {
+      "id": 713,
+      "name": "alola-route-2"
+    },
+    {
+      "id": 714,
+      "name": "kalae-bay"
+    },
+    {
+      "id": 715,
+      "name": "melemele-sea"
+    },
+    {
+      "id": 719,
+      "name": "iki-town"
+    },
+    {
+      "id": 720,
+      "name": "mahalo-trail"
+    },
+    {
+      "id": 722,
+      "name": "ruins-of-conflict"
+    },
+    {
+      "id": 723,
+      "name": "ten-carat-hill"
+    },
+    {
+      "id": 725,
+      "name": "hauoli-cemetery"
+    },
+    {
+      "id": 726,
+      "name": "melemele-meadow"
+    },
+    {
+      "id": 727,
+      "name": "seaward-cave"
+    },
+    {
+      "id": 728,
+      "name": "alola-berry-fields"
+    },
+    {
+      "id": 729,
+      "name": "verdant-cavern--trial-site"
+    },
+    {
+      "id": 731,
+      "name": "alola-route-4"
+    },
+    {
+      "id": 732,
+      "name": "alola-route-5"
+    },
+    {
+      "id": 733,
+      "name": "alola-route-6"
+    },
+    {
+      "id": 734,
+      "name": "alola-route-7"
+    },
+    {
+      "id": 735,
+      "name": "alola-route-8"
+    },
+    {
+      "id": 736,
+      "name": "alola-route-9"
+    },
+    {
+      "id": 738,
+      "name": "hano-beach"
+    },
+    {
+      "id": 740,
+      "name": "paniola-town"
+    },
+    {
+      "id": 741,
+      "name": "heahea-city"
+    },
+    {
+      "id": 742,
+      "name": "konikoni-city"
+    },
+    {
+      "id": 743,
+      "name": "royal-avenue"
+    },
+    {
+      "id": 744,
+      "name": "memorial-hill"
+    },
+    {
+      "id": 745,
+      "name": "paniola-ranch"
+    },
+    {
+      "id": 746,
+      "name": "wela-volcano-park"
+    },
+    {
+      "id": 748,
+      "name": "brooklet-hill"
+    },
+    {
+      "id": 750,
+      "name": "lush-jungle"
+    },
+    {
+      "id": 751,
+      "name": "ruins-of-life"
+    },
+    {
+      "id": 752,
+      "name": "akala-outskirts"
+    },
+    {
+      "id": 753,
+      "name": "digletts-tunnel"
+    },
+    {
+      "id": 755,
+      "name": "alola-route-10"
+    },
+    {
+      "id": 756,
+      "name": "alola-route-11"
+    },
+    {
+      "id": 757,
+      "name": "secluded-shore"
+    },
+    {
+      "id": 758,
+      "name": "alola-route-13"
+    },
+    {
+      "id": 759,
+      "name": "tapu-village"
+    },
+    {
+      "id": 760,
+      "name": "alola-route-15"
+    },
+    {
+      "id": 761,
+      "name": "alola-route-16"
+    },
+    {
+      "id": 762,
+      "name": "alola-route-17"
+    },
+    {
+      "id": 763,
+      "name": "alola-route-12"
+    },
+    {
+      "id": 764,
+      "name": "haina-desert"
+    },
+    {
+      "id": 765,
+      "name": "alola-route-14"
+    },
+    {
+      "id": 766,
+      "name": "ulaula-meadow"
+    },
+    {
+      "id": 769,
+      "name": "malie-garden"
+    },
+    {
+      "id": 770,
+      "name": "mount-hokulani"
+    },
+    {
+      "id": 771,
+      "name": "blush-mountain"
+    },
+    {
+      "id": 772,
+      "name": "ruins-of-abundance"
+    },
+    {
+      "id": 773,
+      "name": "lake-of-the-sunne"
+    },
+    {
+      "id": 774,
+      "name": "lake-of-the-moone"
+    },
+    {
+      "id": 775,
+      "name": "mount-lanakila"
+    },
+    {
+      "id": 780,
+      "name": "poni-meadow"
+    },
+    {
+      "id": 781,
+      "name": "poni-wilds"
+    },
+    {
+      "id": 782,
+      "name": "ancient-poni-path"
+    },
+    {
+      "id": 783,
+      "name": "poni-breaker-coast"
+    },
+    {
+      "id": 784,
+      "name": "poni-grove"
+    },
+    {
+      "id": 785,
+      "name": "poni-plains"
+    },
+    {
+      "id": 786,
+      "name": "poni-coast"
+    },
+    {
+      "id": 787,
+      "name": "poni-gauntlet"
+    },
+    {
+      "id": 788,
+      "name": "seafolk-village"
+    },
+    {
+      "id": 789,
+      "name": "vast-poni-canyon"
+    },
+    {
+      "id": 790,
+      "name": "altar-of-the-sunne"
+    },
+    {
+      "id": 791,
+      "name": "altar-of-the-moone"
+    },
+    {
+      "id": 792,
+      "name": "ruins-of-hope"
+    },
+    {
+      "id": 793,
+      "name": "resolution-cave"
+    },
+    {
+      "id": 794,
+      "name": "exeggutor-island"
+    },
+    {
+      "id": 796,
+      "name": "aether-paradise"
+    },
+    {
+      "id": 797,
+      "name": "ultra-space"
+    },
+    {
+      "id": 799,
+      "name": "roaming-kanto"
+    },
+    {
+      "id": 800,
+      "name": "roaming-johto"
+    },
+    {
+      "id": 801,
+      "name": "roaming-hoenn"
+    },
+    {
+      "id": 802,
+      "name": "roaming-sinnoh"
+    },
+    {
+      "id": 803,
+      "name": "terra-cave"
+    },
+    {
+      "id": 804,
+      "name": "marine-cave"
+    },
+    {
+      "id": 810,
+      "name": "birth-island"
+    },
+    {
+      "id": 811,
+      "name": "navel-rock"
+    },
+    {
+      "id": 812,
+      "name": "faraway-island"
+    },
+    {
+      "id": 813,
+      "name": "hoenn-battle-frontier"
+    },
+    {
+      "id": 814,
+      "name": "johto-safari-zone"
+    },
+    {
+      "id": 868,
+      "name": "galar-route-1"
+    },
+    {
+      "id": 869,
+      "name": "galar-route-2"
+    },
+    {
+      "id": 870,
+      "name": "galar-route-3"
+    },
+    {
+      "id": 871,
+      "name": "galar-route-4"
+    },
+    {
+      "id": 872,
+      "name": "galar-route-5"
+    },
+    {
+      "id": 873,
+      "name": "galar-route-6"
+    },
+    {
+      "id": 874,
+      "name": "galar-route-7"
+    },
+    {
+      "id": 875,
+      "name": "galar-route-8"
+    },
+    {
+      "id": 876,
+      "name": "galar-route-9"
+    },
+    {
+      "id": 877,
+      "name": "galar-route-10"
+    },
+    {
+      "id": 878,
+      "name": "axews-eye"
+    },
+    {
+      "id": 879,
+      "name": "ballimere-lake"
+    },
+    {
+      "id": 880,
+      "name": "ballonlea"
+    },
+    {
+      "id": 881,
+      "name": "galar-battle-tower"
+    },
+    {
+      "id": 882,
+      "name": "brawlers-cave"
+    },
+    {
+      "id": 883,
+      "name": "bridge-field"
+    },
+    {
+      "id": 884,
+      "name": "challenge-beach"
+    },
+    {
+      "id": 885,
+      "name": "challenge-road"
+    },
+    {
+      "id": 886,
+      "name": "circhester"
+    },
+    {
+      "id": 887,
+      "name": "courageous-cavern"
+    },
+    {
+      "id": 888,
+      "name": "crown-shrine"
+    },
+    {
+      "id": 889,
+      "name": "dappled-grove"
+    },
+    {
+      "id": 890,
+      "name": "dusty-bowl"
+    },
+    {
+      "id": 891,
+      "name": "dyna-tree-hill"
+    },
+    {
+      "id": 892,
+      "name": "east-lake-axewell"
+    },
+    {
+      "id": 893,
+      "name": "fields-of-honor"
+    },
+    {
+      "id": 894,
+      "name": "forest-of-focus"
+    },
+    {
+      "id": 895,
+      "name": "freezington"
+    },
+    {
+      "id": 896,
+      "name": "frigid-sea"
+    },
+    {
+      "id": 897,
+      "name": "frostpoint-field"
+    },
+    {
+      "id": 898,
+      "name": "galar-mine"
+    },
+    {
+      "id": 899,
+      "name": "galar-mine-no-2"
+    },
+    {
+      "id": 900,
+      "name": "giants-bed"
+    },
+    {
+      "id": 901,
+      "name": "giants-foot"
+    },
+    {
+      "id": 902,
+      "name": "giants-mirror"
+    },
+    {
+      "id": 903,
+      "name": "giants-seat"
+    },
+    {
+      "id": 904,
+      "name": "glimwood-tangle"
+    },
+    {
+      "id": 905,
+      "name": "hammerlocke"
+    },
+    {
+      "id": 906,
+      "name": "hammerlocke-hills"
+    },
+    {
+      "id": 907,
+      "name": "honeycalm-island"
+    },
+    {
+      "id": 908,
+      "name": "honeycalm-sea"
+    },
+    {
+      "id": 909,
+      "name": "hulbury"
+    },
+    {
+      "id": 910,
+      "name": "galar-iceberg-ruins"
+    },
+    {
+      "id": 911,
+      "name": "insular-sea"
+    },
+    {
+      "id": 912,
+      "name": "galar-iron-ruins"
+    },
+    {
+      "id": 913,
+      "name": "lake-of-outrage"
+    },
+    {
+      "id": 914,
+      "name": "lakeside-cave"
+    },
+    {
+      "id": 915,
+      "name": "loop-lagoon"
+    },
+    {
+      "id": 916,
+      "name": "master-dojo"
+    },
+    {
+      "id": 917,
+      "name": "max-lair"
+    },
+    {
+      "id": 918,
+      "name": "motostoke"
+    },
+    {
+      "id": 919,
+      "name": "motostoke-outskirts"
+    },
+    {
+      "id": 920,
+      "name": "motostoke-riverbank"
+    },
+    {
+      "id": 921,
+      "name": "north-lake-miloch"
+    },
+    {
+      "id": 922,
+      "name": "old-cemetery"
+    },
+    {
+      "id": 923,
+      "name": "path-to-the-peak"
+    },
+    {
+      "id": 924,
+      "name": "postwick"
+    },
+    {
+      "id": 925,
+      "name": "potbottom-desert"
+    },
+    {
+      "id": 926,
+      "name": "roaring-sea-caves"
+    },
+    {
+      "id": 927,
+      "name": "galar-rock-peak-ruins"
+    },
+    {
+      "id": 928,
+      "name": "rolling-fields"
+    },
+    {
+      "id": 929,
+      "name": "slippery-slope"
+    },
+    {
+      "id": 930,
+      "name": "slumbering-weald"
+    },
+    {
+      "id": 931,
+      "name": "snowslide-slope"
+    },
+    {
+      "id": 932,
+      "name": "soothing-wetlands"
+    },
+    {
+      "id": 933,
+      "name": "south-lake-miloch"
+    },
+    {
+      "id": 934,
+      "name": "spikemuth"
+    },
+    {
+      "id": 935,
+      "name": "split-decision-ruins"
+    },
+    {
+      "id": 937,
+      "name": "stepping-stone-sea"
+    },
+    {
+      "id": 938,
+      "name": "stony-wilderness"
+    },
+    {
+      "id": 939,
+      "name": "stow-on-side"
+    },
+    {
+      "id": 940,
+      "name": "three-point-pass"
+    },
+    {
+      "id": 943,
+      "name": "training-lowlands"
+    },
+    {
+      "id": 944,
+      "name": "tunnel-to-the-top"
+    },
+    {
+      "id": 945,
+      "name": "turffield"
+    },
+    {
+      "id": 946,
+      "name": "warm-up-tunnel"
+    },
+    {
+      "id": 947,
+      "name": "watchtower-ruins"
+    },
+    {
+      "id": 948,
+      "name": "wedgehurst"
+    },
+    {
+      "id": 949,
+      "name": "west-lake-axewell"
+    },
+    {
+      "id": 950,
+      "name": "workout-sea"
+    },
+    {
+      "id": 951,
+      "name": "wyndon"
+    },
+    {
+      "id": 1041,
+      "name": "giants-cap"
+    },
+    {
+      "id": 1042,
+      "name": "hauoli-city"
+    },
+    {
+      "id": 1043,
+      "name": "verdant-cavern"
+    },
+    {
+      "id": 1044,
+      "name": "thrifty-megamart"
+    },
+    {
+      "id": 1045,
+      "name": "malie-city"
+    },
+    {
+      "id": 1046,
+      "name": "dividing-peak-tunnel"
+    },
+    {
+      "id": 1047,
+      "name": "heahea-beach"
+    },
+    {
+      "id": 1048,
+      "name": "sandy-cave"
+    },
+    {
+      "id": 1049,
+      "name": "ulaula-beach"
+    },
+    {
+      "id": 1050,
+      "name": "ultra-megalopolis"
+    },
+    {
+      "id": 1051,
+      "name": "ultra-space-wilds"
+    },
+    {
+      "id": 1052,
+      "name": "poke-pelago"
+    },
+    {
+      "id": 1053,
+      "name": "team-rockets-castle"
+    },
+    {
+      "id": 1055,
+      "name": "mossdeep-space-center"
+    },
+    {
+      "id": 1056,
+      "name": "roaming-kalos"
+    },
+    {
+      "id": 1089,
+      "name": "hoenn-pokecenter"
+    },
+    {
+      "id": 1091,
+      "name": "kanto-pokecenter"
+    },
+    {
+      "id": 1092,
+      "name": "sinnoh-pokemart"
+    },
+    {
+      "id": 1093,
+      "name": "johto-pokemart"
+    },
+    {
+      "id": 1094,
+      "name": "mirage-island"
+    },
+    {
+      "id": 1095,
+      "name": "outskirt-stand"
+    },
+    {
+      "id": 1096,
+      "name": "phenac-city"
+    },
+    {
+      "id": 1097,
+      "name": "snagem-hideout"
+    },
+    {
+      "id": 1098,
+      "name": "shadow-pokemon-lab"
+    },
+    {
+      "id": 1099,
+      "name": "pyrite-town"
+    },
+    {
+      "id": 1100,
+      "name": "pyrite-bldg"
+    },
+    {
+      "id": 1101,
+      "name": "pyrite-cave"
+    },
+    {
+      "id": 1102,
+      "name": "realgam-tower"
+    },
+    {
+      "id": 1103,
+      "name": "agate-village"
+    },
+    {
+      "id": 1104,
+      "name": "the-under"
+    },
+    {
+      "id": 1105,
+      "name": "mt-battle"
+    },
+    {
+      "id": 1106,
+      "name": "pokemon-hq-lab"
+    },
+    {
+      "id": 1107,
+      "name": "gateon-port"
+    },
+    {
+      "id": 1108,
+      "name": "cipher-lab"
+    },
+    {
+      "id": 1109,
+      "name": "pokespot"
+    },
+    {
+      "id": 1110,
+      "name": "onbs"
+    },
+    {
+      "id": 1111,
+      "name": "cipher-key-lair"
+    },
+    {
+      "id": 1112,
+      "name": "citadark-isle"
+    },
+    {
+      "id": 1113,
+      "name": "kanto-underground-path"
+    },
+    {
+      "id": 1114,
+      "name": "energy-plant"
+    },
+    {
+      "id": 1115,
+      "name": "meetup-spot"
+    },
+    {
+      "id": 1116,
+      "name": "isle-of-armor-caves"
+    },
+    {
+      "id": 1117,
+      "name": "roaming-galar-wild-area"
+    },
+    {
+      "id": 1118,
+      "name": "roaming-isle-of-armor"
+    },
+    {
+      "id": 1119,
+      "name": "roaming-crown-tundra"
+    },
+    {
+      "id": 1120,
+      "name": "galar-wild-area-max-dens"
+    },
+    {
+      "id": 1121,
+      "name": "kalos-berry-fields"
+    }
+  ],
+  "versions": [
+    {
+      "id": 44,
+      "name": "red-japan",
+      "groups": [
+        {
+          "id": 28,
+          "name": "red-green-japan"
+        }
+      ],
+      "encounter_count": 872,
+      "learnset_count": 4128
+    },
+    {
+      "id": 45,
+      "name": "green-japan",
+      "groups": [
+        {
+          "id": 28,
+          "name": "red-green-japan"
+        }
+      ],
+      "encounter_count": 872,
+      "learnset_count": 4128
+    }
+  ]
+}

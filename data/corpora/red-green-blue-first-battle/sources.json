@@ -1,0 +1,32 @@
+[
+  {
+    "id": "red-green",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Red_and_Green_Versions",
+    "retrieved_at": "2026-09-11T21:42:48.614838+00:00",
+    "sha256": "bb8a5d2284183ccb6b1170afba9a42b3f9f7ca5891d55dac9f621318971215b8",
+    "source_revision": "4548271",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.5/",
+    "attribution": "Bulbapedia contributors",
+    "language": "en"
+  },
+  {
+    "id": "blue-teams",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Blue_(game)/Red,_Green,_and_Blue",
+    "retrieved_at": "2026-09-11T21:42:53.997850+00:00",
+    "sha256": "8988126a87aa677857a45ddeaa81335c3cc43007289fd7a09a92e7b7cf7280b6",
+    "source_revision": "4399706",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.5/",
+    "attribution": "Bulbapedia contributors",
+    "language": "en"
+  },
+  {
+    "id": "oak-lab",
+    "url": "https://bulbapedia.bulbagarden.net/wiki/Professor_Oak%27s_Laboratory",
+    "retrieved_at": "2026-09-11T21:42:59.349700+00:00",
+    "sha256": "13b13db565930f0f5cbac5d1ea14569be6f1f5cc47d499a7eebf3b3775fe6753",
+    "source_revision": "4566470",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.5/",
+    "attribution": "Bulbapedia contributors",
+    "language": "en"
+  }
+]

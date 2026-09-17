@@ -24,6 +24,7 @@ pokelance = { path = "vendor/PokeLance" }
 [project.scripts]
 pokegraph-ingest = "pokegraph_ingest.ingest:main"
 pokegraph-schema = "pokegraph_ingest.schema:main"
+pokegraph-battles = "pokegraph_ingest.battles:main"
 pokegraph-api = "pokegraph_api.__main__:main"
 
 [build-system]

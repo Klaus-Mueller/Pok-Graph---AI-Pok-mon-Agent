@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends, FastAPI, HTTPException, Query, Request
 from fastapi.responses import RedirectResponse
 
 from pokegraph import PokeGraphClient
+from pokegraph.agent import BattleQuestionAgent
 from pokegraph.errors import (
     EntityNotFoundError,
     GraphUnavailableError,
@@ -16,7 +17,7 @@ from pokegraph.errors import (
     QueryTimeoutError,
 )
 
-from .schemas import ErrorModel, HealthModel, QueryPageModel, page_to_model
+from .schemas import AgentRequest, AgentResponse, ErrorModel, HealthModel, QueryPageModel, page_to_model
 
 DESCRIPTION = """
 Read-only HTTP API over the PokéGraph Cypher catalog.
@@ -67,6 +68,7 @@ def create_app() -> FastAPI:
             {"name": "Learnsets", "description": "Moves a Pokémon can learn in a version group."},
             {"name": "Evolutions", "description": "Stored EVOLVES_TO conditions (not game availability)."},
             {"name": "Matchups", "description": "Stored type charts only — not generation-specific battle rules."},
+            {"name": "Agent", "description": "Small deterministic pilot that routes Blue battle questions to reviewed read-only queries."},
         ],
         swagger_ui_parameters={
             "tryItOutEnabled": True,
@@ -153,6 +155,25 @@ def _routes() -> APIRouter:
                 detail=getattr(request.app.state, "startup_error", None),
             )
         return HealthModel(status="ok", database_ready=True)
+
+    @router.post(
+        "/v1/agent/ask",
+        tags=["Agent"],
+        response_model=AgentResponse,
+        summary="Ask a question supported by the Blue Red/Green pilot",
+        description=("Routes battle-team and Route 22 type-comparison questions to predefined Cypher, "
+                     "and first-battle outcome questions to the local corpus. Missing context is requested explicitly."),
+    )
+    async def agent_ask(payload: AgentRequest, graph: Graph) -> AgentResponse:
+        agent = BattleQuestionAgent(graph)
+        result = await agent.ask(
+            payload.question,
+            game_version_id=payload.game_version_id,
+            battle_key=payload.battle_key,
+            player_starter=payload.player_starter,
+            accessible_location_names=payload.accessible_location_names,
+        )
+        return AgentResponse(**result)
 
     @router.get(
         "/v1/discovery/pokemon",

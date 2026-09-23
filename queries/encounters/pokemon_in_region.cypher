@@ -1,12 +1,12 @@
 // query: pokemon_in_region
 // answers: Which Pokemon have recorded encounters in the allowed locations, region, and game version?
 // does_not: Check progression, capture prerequisites, or completeness of encounter coverage.
-// required: $accessible_location_names (list[str]), $region_name (str), $version_id (int)
+// required: $accessible_location_names (string), $region_name (string), $version_id (int)
 // optional: $skip (int), $limit (int)
 // returns: pokemon_id, pokemon_name, encounters, availability_scope, progression_checked
 MATCH (p:Pokemon)-[:HAS_ENCOUNTER]->(e:Encounter)-[:IN_VERSION]->(:GameVersion {id:$version_id})
 MATCH (e)-[:AT_LOCATION_AREA]->(a:LocationArea)-[:PART_OF_LOCATION]->(l:Location)-[:IN_REGION]->(:Region {name:$region_name})
-WHERE l.name IN $accessible_location_names
+WHERE l.name IN split($accessible_location_names, '|')
 OPTIONAL MATCH (e)-[:USES_METHOD]->(method:EncounterMethod)
 WITH DISTINCT p, e, a, l, method
 ORDER BY p.id, l.id, a.id, e.id, method.id

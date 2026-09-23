@@ -1,7 +1,7 @@
 // query: regional_candidates_for_battle
 // answers: Which explicitly allowed location encounter candidates have hypothetical type advantages against this team?
 // does_not: Check moves, progression, damage, victory, or historical type-chart accuracy.
-// required: $accessible_location_names (list[str]), $trainer_id (str), $version_id (int), $battle_key (str), $starter_species_id (int)
+// required: $accessible_location_names (string), $trainer_id (string), $version_id (int), $battle_key (string), $starter_species_id (int)
 // optional: $skip (int), $limit (int)
 // returns: battle_id, variant_id, region_name, pokemon_id, pokemon_name, locations, members_covered, team_size, matchups, data_complete, availability_scope, progression_checked, moves_checked, mechanics_basis
 MATCH (:Trainer {id:$trainer_id})-[:HAS_BATTLE]->(b:BattleEncounter {battle_key:$battle_key})-[:IN_GAME_VERSION]->(:GameVersion {id:$version_id})
@@ -11,7 +11,7 @@ MATCH (v)-[:HAS_MEMBER]->(member:TrainerPokemon)
 WITH b,v,region,collect(DISTINCT member) AS team
 MATCH (p:Pokemon)-[:HAS_ENCOUNTER]->(e:Encounter)-[:IN_VERSION]->(:GameVersion {id:$version_id})
 MATCH (e)-[:AT_LOCATION_AREA]->(:LocationArea)-[:PART_OF_LOCATION]->(l:Location)-[:IN_REGION]->(region)
-WHERE l.name IN $accessible_location_names
+WHERE l.name IN split($accessible_location_names, '|')
 WITH DISTINCT b,v,region,team,p,l
 ORDER BY l.id
 WITH b,v,region,team,p,collect({id:l.id,name:l.name}) AS locations

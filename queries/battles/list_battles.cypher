@@ -1,7 +1,7 @@
 // query: list_battles
 // answers: Which catalogued battles exist for a trainer in this exact game?
 // does_not: Treat battle_order as a mandatory progression sequence.
-// required: $trainer_id (str), $version_id (int)
+// required: $trainer_id (string), $version_id (int)
 // optional: $skip (int) = 0, $limit (int) = 50
 // returns: battle_id, battle_key, battle_order, battle_name, version_id, location_name, location_id, location_mapping_status, progression_status, is_optional, victory_required_for_progression, progression_notes
 MATCH (:Trainer {id:$trainer_id})-[:HAS_BATTLE]->(b:BattleEncounter)-[:IN_GAME_VERSION]->(v:GameVersion {id:$version_id})

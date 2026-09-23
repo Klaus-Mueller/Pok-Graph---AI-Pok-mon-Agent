@@ -12,6 +12,11 @@ _PARAM_RE = re.compile(r"\$(\w+)\s*\((\w+)\)")
 _LISTING_DEFAULTS = {"skip": 0, "limit": 50}
 
 QUERY_PATHS: dict[str, str] = {
+    "battles.team_for_battle": "battles/team_for_battle.cypher",
+    "battles.context_for_battle": "battles/context_for_battle.cypher",
+    "battles.list_battles": "battles/list_battles.cypher",
+    "battles.regional_candidates_for_battle": "battles/regional_candidates_for_battle.cypher",
+    "encounters.pokemon_in_region": "encounters/pokemon_in_region.cypher",
     "discovery.dataset_fingerprint": "discovery/dataset_fingerprint.cypher",
     "discovery.find_location_area_by_name": "discovery/find_location_area_by_name.cypher",
     "discovery.find_move_by_name": "discovery/find_move_by_name.cypher",
@@ -47,6 +52,7 @@ QUERY_PATHS: dict[str, str] = {
 ENTITY_LABELS = {
     "pokemon_id": "Pokemon",
     "species_id": "PokemonSpecies",
+    "starter_species_id": "PokemonSpecies",
     "location_area_id": "LocationArea",
     "move_id": "Move",
     "version_id": "GameVersion",
@@ -192,6 +198,18 @@ QUERY_EXTRAS: dict[str, tuple[ExistenceCheck, ...]] = {
     "matchups.offensive_coverage_by_types": _existence(
         ("pokemon_id", "discovery.get_pokemon", "pokemon_id"),
         ("defender_pokemon_id", "discovery.get_pokemon", "pokemon_id"),
+    ),
+    "battles.context_for_battle": _existence(("version_id", "discovery.get_version", "version_id")),
+    "battles.team_for_battle": _existence(
+        ("version_id", "discovery.get_version", "version_id"),
+        ("starter_species_id", "discovery.get_species", "species_id"),
+    ),
+    "battles.regional_candidates_for_battle": _existence(
+        ("version_id", "discovery.get_version", "version_id"),
+        ("starter_species_id", "discovery.get_species", "species_id"),
+    ),
+    "encounters.pokemon_in_region": _existence(
+        ("version_id", "discovery.get_version", "version_id"),
     ),
     "matchups.type_effectiveness": _existence(
         ("attacker_type_id", "discovery.get_type", "type_id"),

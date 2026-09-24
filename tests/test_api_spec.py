@@ -15,6 +15,7 @@ class OpenApiSpecTests(unittest.TestCase):
         self.assertIn("/v1/learnsets/pokemon/{pokemon_id}", paths)
         self.assertIn("/v1/evolutions/chain", paths)
         self.assertIn("/v1/matchups/effectiveness", paths)
+        self.assertIn("/v1/agent/ask", paths)
         self.assertTrue(any(getattr(route, "path", None) == "/docs" for route in create_app().routes))
         tags = {tag["name"] for tag in spec.get("tags", [])} | {
             operation.get("tags", [None])[0]
@@ -22,7 +23,7 @@ class OpenApiSpecTests(unittest.TestCase):
             for operation in path.values()
             if isinstance(operation, dict)
         }
-        self.assertTrue({"Discovery", "Encounters", "Learnsets", "Evolutions", "Matchups"} <= tags)
+        self.assertTrue({"Discovery", "Encounters", "Learnsets", "Evolutions", "Matchups", "Agent"} <= tags)
 
 
 if __name__ == "__main__":
